@@ -6,204 +6,208 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Nimbus Grid is a secure cloud storage capacity platform for teams that need encrypted collaboration, predictable throughput, compliance controls, and regional data residency."
+    content="QUOATZ is a premium marketplace for service requests, business-owner profiles, reverse bidding, subscriptions, secure payments, and verified marketplace operations."
   />
-  <meta name="theme-color" content="#17130d" />
-  <title>Nimbus Grid</title>
+  <meta name="theme-color" content="#070808" />
+  <title>QUOATZ Marketplace</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap"
     rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d7b66f'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='28' font-family='Arial' font-weight='700' fill='%23070808'%3EQ%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <iframe class="shader-bg" src="https://fragcoord.xyz/embed/c6zisyc6?viewport=1422x800"
-        title="Animated shader background" loading="eager" allow="autoplay; fullscreen" aria-hidden="true"
-        tabindex="-1" referrerpolicy="no-referrer"></iframe>
-      <div class="shader-fallback" aria-hidden="true"></div>
-
       <header class="site-header">
-        <a class="brand" href="#" aria-label="Nimbus Grid home">NIMBUS GRID</a>
+        <a class="brand" href="#" aria-label="QUOATZ home">
+          <span class="brand-mark" aria-hidden="true">Q</span>
+          <span>QUOATZ</span>
+        </a>
         <div class="header-right">
           <nav class="nav" aria-label="Primary navigation">
-            <a href="#platform">Technology</a>
-            <a href="#security">Security</a>
-            <a href="#plans">Capacity</a>
-            <a href="#operations">Operations</a>
+            <a href="#marketplace">Marketplace</a>
+            <a href="#plans">Plans</a>
+            <a href="#trust">Trust</a>
+            <a href="#operations">Stack</a>
           </nav>
-          <a class="header-cta" href="#pricing">Get Started</a>
+          <a class="header-cta" href="#plans">Join waitlist</a>
         </div>
       </header>
 
       <div class="hero-layout">
-        <div class="console-cluster" aria-label="Cloud control module">
-          <div class="console-card">
-            <div class="console-tabs" role="tablist" aria-label="Provisioning views">
-              <button class="console-tab active" type="button" role="tab" aria-selected="true"
-                data-tab="cli">CLI</button>
-              <button class="console-tab" type="button" role="tab" aria-selected="false" data-tab="api">API</button>
-              <button class="console-tab" type="button" role="tab" aria-selected="false"
-                data-tab="console">Console</button>
-              <span class="console-window-control wide" aria-hidden="true"></span>
-              <span class="console-window-control" aria-hidden="true"></span>
-            </div>
-
-            <div class="console-pane active" data-pane="cli">
-              <pre><code><span class="terminal-muted">$</span> nimbus storage create \
-  --workspace prod-web \
-  --tier encrypted-fast \
-  --region eu-central</code></pre>
-              <pre class="terminal-output" data-typed="storage pool web-db-test queued"></pre>
-            </div>
-
-            <div class="console-pane" data-pane="api" hidden>
-              <pre><code>POST /v1/storage/pools
-{
-  "name": "web-db-test",
-  "tier": "encrypted-fast",
-  "quota": "8 TiB"
-}</code></pre>
-              <pre class="terminal-output" data-typed="202 accepted: provisioning policy attached"></pre>
-            </div>
-
-            <div class="console-pane" data-pane="console" hidden>
-              <label class="console-field full">
-                <span>Instance name</span>
-                <strong class="console-input" data-typed="web-db-test"></strong>
-              </label>
-              <label class="console-field full">
-                <span>Image</span>
-                <strong class="console-input">ubuntu-24.04-noble</strong>
-              </label>
-              <div class="console-field-row">
-                <label class="console-field">
-                  <span>Memory</span>
-                  <strong class="console-input">8 GiB</strong>
-                </label>
-                <label class="console-field">
-                  <span>CPUs</span>
-                  <strong class="console-input">2</strong>
-                </label>
-              </div>
-            </div>
+        <div class="hero-content">
+          <p class="eyebrow">Verified service marketplace</p>
+          <h1 id="hero-title">QUOATZ</h1>
+          <p class="hero-copy">
+            A dark-metal marketplace where Users post service requests, Business Owners bid with
+            proof, reverse auctions stay timed, and every payment path feels built for trust.
+          </p>
+          <div class="hero-actions" aria-label="QUOATZ primary actions">
+            <a class="primary-action" href="#marketplace">Explore flow</a>
+            <a class="secondary-action" href="#operations">View stack</a>
           </div>
         </div>
 
-        <div class="hero-content">
-          <div class="hero-message">
-            <h1 id="hero-title">Cloud space that scales with your business systems.</h1>
-            <p class="hero-copy">
-              Nimbus Grid sells secure cloud storage capacity for companies that need fast onboarding,
-              predictable throughput, encrypted collaboration, and modern data residency controls.
-            </p>
+        <div class="product-stage" aria-label="QUOATZ marketplace product preview">
+          <div class="phone-rail" aria-hidden="true">
+            <div class="phone-top"></div>
+            <div class="phone-card live">
+              <span>Reverse bid</span>
+              <strong>02:14:33</strong>
+            </div>
+            <div class="phone-card">
+              <span>Qualified</span>
+              <strong>18 owners</strong>
+            </div>
+            <div class="phone-card">
+              <span>Payment</span>
+              <strong>Escrow ready</strong>
+            </div>
+          </div>
+
+          <div class="market-console">
+            <div class="console-tabs" role="tablist" aria-label="Marketplace preview views">
+              <button class="console-tab active" type="button" role="tab" aria-selected="true"
+                data-tab="request">Request</button>
+              <button class="console-tab" type="button" role="tab" aria-selected="false" data-tab="bids">Bids</button>
+              <button class="console-tab" type="button" role="tab" aria-selected="false" data-tab="pay">Pay</button>
+            </div>
+
+            <div class="console-pane active" data-pane="request">
+              <div class="console-heading">
+                <span>Service request</span>
+                <strong>Kitchen remodel</strong>
+              </div>
+              <div class="request-grid">
+                <span>Budget</span><strong>$8,500</strong>
+                <span>Target date</span><strong>Aug 30</strong>
+                <span>Requirements</span><strong>Portfolio + 3.0 rating</strong>
+                <span>State</span><strong>Georgia</strong>
+              </div>
+              <pre class="terminal-output" data-typed="liability confirmed | auction timer started"></pre>
+            </div>
+
+            <div class="console-pane" data-pane="bids" hidden>
+              <div class="bid-list">
+                <div class="bid-row">
+                  <span>Business Owner</span>
+                  <strong>$7,940</strong>
+                  <small>4.8 rating</small>
+                </div>
+                <div class="bid-row selected">
+                  <span>Lowest qualified</span>
+                  <strong>$7,610</strong>
+                  <small>reverse lead</small>
+                </div>
+                <div class="bid-row">
+                  <span>Co-bid team</span>
+                  <strong>$8,050</strong>
+                  <small>2 partners</small>
+                </div>
+              </div>
+              <pre class="terminal-output" data-typed="3 new bids | 2 recommendations attached"></pre>
+            </div>
+
+            <div class="console-pane" data-pane="pay" hidden>
+              <div class="payment-stack">
+                <div><span>Cards</span><strong>Visa, Mastercard, AmEx, Discover</strong></div>
+                <div><span>Wallet</span><strong>PayPal ready</strong></div>
+                <div><span>Crypto</span><strong>Bitcoin gateway queued</strong></div>
+                <div><span>Receipts</span><strong>Email automation active</strong></div>
+              </div>
+              <pre class="terminal-output" data-typed="grace rules | decline alerts | receipts"></pre>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="platform-accordion" id="platform" aria-labelledby="platform-title">
+    <section class="platform-accordion" id="marketplace" aria-labelledby="marketplace-title">
       <div class="accordion-inner">
-        <h2 id="platform-title" class="sr-only">Nimbus Grid platform capabilities</h2>
-        <div class="accordion-nav" role="tablist" aria-label="Platform capabilities">
-          <button class="accordion-tab active" type="button" role="tab" aria-selected="true" data-accordion-tab="infra">
-            Programmable infra
-          </button>
-          <button class="accordion-tab" type="button" role="tab" aria-selected="false" data-accordion-tab="residency">
-            Data residency
-          </button>
-          <button class="accordion-tab" type="button" role="tab" aria-selected="false" data-accordion-tab="scaling">
-            Elastic scaling
-          </button>
-          <button class="accordion-tab" type="button" role="tab" aria-selected="false" data-accordion-tab="visibility">
-            Unified visibility
-          </button>
+        <div class="section-intro">
+          <p class="eyebrow">Marketplace engine</p>
+          <h2 id="marketplace-title">From posted request to paid work, every step is visible.</h2>
+        </div>
+
+        <div class="accordion-nav" role="tablist" aria-label="Marketplace capabilities">
+          <button class="accordion-tab active" type="button" role="tab" aria-selected="true"
+            data-accordion-tab="requesting">Requests</button>
+          <button class="accordion-tab" type="button" role="tab" aria-selected="false"
+            data-accordion-tab="timers">Timers</button>
+          <button class="accordion-tab" type="button" role="tab" aria-selected="false"
+            data-accordion-tab="profiles">Profiles</button>
+          <button class="accordion-tab" type="button" role="tab" aria-selected="false"
+            data-accordion-tab="payments">Payments</button>
         </div>
 
         <div class="accordion-stack" aria-live="polite">
-          <article class="accordion-card active" data-accordion-card="infra">
+          <article class="accordion-card active" data-accordion-card="requesting">
             <div class="accordion-copy">
-              <h3>Programmable infra</h3>
-              <p>Define storage pools, quotas, regions, and access policy in code so every workspace ships with the same
-                controls.</p>
+              <h3>Service request creation</h3>
+              <p>Users post title, budget, target date, photos, requirements, payment preference, and liability consent
+                in one clean flow.</p>
             </div>
             <div class="accordion-visual" aria-hidden="true">
-              <div class="code-window">
-                <span></span>
-                <span></span>
-                <span></span>
-                <pre><code>01  storage_pool = {
-02    name      = "client-vault"
-03    region    = "eu-central"
-04    quota     = "24 TiB"
-05    policy    = encrypted_fast
-06  }</code></pre>
+              <div class="workflow-board">
+                <span>01 Details</span>
+                <span>02 Media</span>
+                <span>03 Requirements</span>
+                <span>04 Auction mode</span>
               </div>
             </div>
           </article>
 
-          <article class="accordion-card" data-accordion-card="residency">
+          <article class="accordion-card" data-accordion-card="timers">
             <div class="accordion-copy">
-              <h3>Data residency</h3>
-              <p>Pin departments and client workspaces to approved regions with retention and encryption rules attached
-                from day one.</p>
+              <h3>Timed bidding</h3>
+              <p>Every auction card and detail view shows the countdown, bid count, start window, close window, and
+                reverse-bidding state.</p>
             </div>
             <div class="accordion-visual" aria-hidden="true">
-              <div class="code-window metric-window">
-                <span></span>
-                <span></span>
-                <span></span>
-                <pre><code>Region policy
-
-EU Central     locked
-US East        allowed
-AP Southeast   review
-Retention      7 years</code></pre>
+              <div class="timer-board">
+                <strong>11:42:08</strong>
+                <span>Reverse bidding live</span>
+                <small>Lowest qualified bid can win</small>
               </div>
             </div>
           </article>
 
-          <article class="accordion-card" data-accordion-card="scaling">
+          <article class="accordion-card" data-accordion-card="profiles">
             <div class="accordion-copy">
-              <h3>Elastic scaling</h3>
-              <p>Expand capacity before teams hit limits, route large transfers through faster lanes, and keep
-                procurement predictable.</p>
+              <h3>Business Owner proof</h3>
+              <p>Profiles surface portfolio media, ratings, social tags, recommendations, website access, and challenge
+                paths for negative ratings.</p>
             </div>
             <div class="accordion-visual" aria-hidden="true">
-              <div class="code-window metric-window">
-                <span></span>
-                <span></span>
-                <span></span>
-                <pre><code>Capacity forecast
-
-Used       18.4 TiB
-Reserved   24 TiB
-Burst      ready
-Next tier  approved</code></pre>
+              <div class="profile-board">
+                <div class="profile-avatar"></div>
+                <div>
+                  <strong>4.9 rating</strong>
+                  <span>Portfolio verified</span>
+                </div>
+                <div class="profile-bars">
+                  <span></span><span></span><span></span>
+                </div>
               </div>
             </div>
           </article>
 
-          <article class="accordion-card" data-accordion-card="visibility">
+          <article class="accordion-card" data-accordion-card="payments">
             <div class="accordion-copy">
-              <h3>Unified visibility</h3>
-              <p>Track growth, usage pressure, inactive files, and compliance drift from a single operational surface.
-              </p>
+              <h3>Payments and account rules</h3>
+              <p>Subscriptions, grace periods, receipts, declined-payment emails, verified login, unique social tags, and
+                new-IP alerts are part of the flow.</p>
             </div>
             <div class="accordion-visual" aria-hidden="true">
-              <div class="code-window metric-window">
-                <span></span>
-                <span></span>
-                <span></span>
-                <pre><code>Operations view
-
-Sync health       stable
-Cold data         14%
-Policy drift       0
-Audit export      live</code></pre>
+              <div class="payment-board">
+                <span>Verified</span>
+                <span>Receipt sent</span>
+                <span>5-day reminder</span>
+                <span>Grace locked</span>
               </div>
             </div>
           </article>
@@ -211,187 +215,157 @@ Audit export      live</code></pre>
       </div>
     </section>
 
-    <section class="pricing-section" id="pricing" aria-labelledby="pricing-title">
+    <section class="pricing-section" id="plans" aria-labelledby="plans-title">
       <div class="pricing-top">
         <div class="pricing-copy">
-          <p class="eyebrow">Pricing</p>
-          <h2 id="pricing-title">Only pay for cloud storage your teams actually use.</h2>
+          <p class="eyebrow">Subscription levels</p>
+          <h2 id="plans-title">Four plans, one permission system.</h2>
           <p>
-            Scale capacity up for active projects and cool it down when workspaces go quiet.
-            Nimbus Grid keeps storage, transfer, and policy costs visible before they become invoices.
+            QUOATZ uses plan entitlements to decide request volume, state access, bidder selection, message reach,
+            recommendation attachments, reports, and portfolio media access.
           </p>
         </div>
 
-        <div class="pricing-table" aria-label="Nimbus Grid pricing examples">
+        <div class="pricing-table" aria-label="QUOATZ subscription permission summary">
           <div class="pricing-table-header">
-            <h3>Storage costs</h3>
-            <div class="billing-toggle" aria-label="Billing mode">
-              <span>Per month</span>
-              <strong>Per GiB</strong>
+            <h3>Entitlement matrix</h3>
+            <div class="billing-toggle" aria-label="Permission engine">
+              <span>Role</span>
+              <strong>User</strong>
             </div>
           </div>
           <div class="pricing-row">
-            <span>Encrypted active storage</span>
-            <strong>$0.021 / GiB / month</strong>
+            <span>Standard</span>
+            <strong>5 requests, 24h post delay</strong>
           </div>
           <div class="pricing-row">
-            <span>Warm collaboration tier</span>
-            <strong>$0.012 / GiB / month</strong>
+            <span>Gold</span>
+            <strong>20 requests, instant visibility</strong>
           </div>
           <div class="pricing-row">
-            <span>Cold retained archive</span>
-            <strong>$0.004 / GiB / month</strong>
+            <span>Diamond</span>
+            <strong>50 requests, recommendations, reports</strong>
           </div>
           <div class="pricing-row">
-            <span>Regional accelerated transfer</span>
-            <strong>$0.018 / GiB moved</strong>
-          </div>
-          <div class="pricing-row">
-            <span>Customer-managed key vault</span>
-            <strong>included</strong>
+            <span>Platinum</span>
+            <strong>Unlimited requests, partners, reports</strong>
           </div>
         </div>
       </div>
 
       <div class="pricing-plan-row">
-        <div class="pricing-plan starter">
-          <h3>Starter</h3>
-          <p>For small teams consolidating shared project files.</p>
-          <a href="#pricing">Start small</a>
-        </div>
-        <div class="pricing-plan team">
-          <h3>Team</h3>
-          <p>For departments scaling collaboration and regional transfer.</p>
-          <a href="#pricing">Build team plan</a>
-        </div>
-        <div class="pricing-plan enterprise">
-          <h3>Enterprise</h3>
-          <p>For organizations prioritizing governance, residency, and support.</p>
-          <a href="#plans">Talk to sales</a>
-        </div>
+        <article class="pricing-plan starter">
+          <h3>Standard</h3>
+          <p>For general Users posting local service requests with core messaging and bidder selection.</p>
+          <a href="#operations">Map fields</a>
+        </article>
+        <article class="pricing-plan team">
+          <h3>Gold</h3>
+          <p>For self-proprietors who need faster marketplace access and broader messaging.</p>
+          <a href="#operations">Upgrade flow</a>
+        </article>
+        <article class="pricing-plan enterprise">
+          <h3>Diamond</h3>
+          <p>For small businesses adding bid recommendations, discounts, reports, and out-of-state posting.</p>
+          <a href="#operations">See reports</a>
+        </article>
+        <article class="pricing-plan platinum">
+          <h3>Platinum</h3>
+          <p>For larger businesses with unlimited requests, partner support, portfolio video, and reporting.</p>
+          <a href="#operations">Scale access</a>
+        </article>
       </div>
 
       <div class="pricing-bars" aria-hidden="true">
-        <div class="pricing-bar" style="--bar-height: 66%; --bar-shift: 0px;"></div>
-        <div class="pricing-bar muted" style="--bar-height: 58%; --bar-shift: 18px;"></div>
-        <div class="pricing-bar" style="--bar-height: 50%; --bar-shift: -12px;"></div>
-        <div class="pricing-bar muted" style="--bar-height: 62%; --bar-shift: 14px;"></div>
-        <div class="pricing-bar" style="--bar-height: 45%; --bar-shift: -18px;"></div>
-        <div class="pricing-bar muted" style="--bar-height: 54%; --bar-shift: 10px;"></div>
-        <div class="pricing-bar" style="--bar-height: 48%; --bar-shift: -14px;"></div>
-        <div class="pricing-bar muted" style="--bar-height: 64%; --bar-shift: 20px;"></div>
-        <div class="pricing-bar" style="--bar-height: 72%; --bar-shift: -8px;"></div>
-        <div class="pricing-bar muted" style="--bar-height: 70%; --bar-shift: 14px;"></div>
-        <div class="pricing-bar" style="--bar-height: 78%; --bar-shift: -16px;"></div>
-        <div class="pricing-bar muted" style="--bar-height: 82%; --bar-shift: 8px;"></div>
+        <div class="pricing-bar" style="--bar-height: 54%;"></div>
+        <div class="pricing-bar muted" style="--bar-height: 62%;"></div>
+        <div class="pricing-bar" style="--bar-height: 70%;"></div>
+        <div class="pricing-bar muted" style="--bar-height: 82%;"></div>
       </div>
     </section>
 
-    <section class="security-section" id="security" aria-labelledby="security-title">
+    <section class="security-section" id="trust" aria-labelledby="trust-title">
       <div class="security-heading">
         <div>
-          <p class="eyebrow">Security</p>
-          <h2 id="security-title">Modern encryption and compliance controls without slowing the team down.</h2>
+          <p class="eyebrow">Trust controls</p>
+          <h2 id="trust-title">Marketplace confidence has to be engineered into the interface.</h2>
         </div>
         <p>
-          Role-based access, customer-managed keys, immutable retention, and regional storage policies give business
-          clients a cloud layer that can satisfy procurement, IT, and legal from the first deployment.
+          Verification, account uniqueness, password rotation, new-IP alerts, bid rules, and payment notices all show
+          up as visible marketplace states instead of hidden back-office policy.
         </p>
       </div>
 
       <div class="security-card-grid">
         <article class="security-card api-card">
           <div class="security-card-copy">
-            <h3>Full policy control</h3>
-            <p>First-class API access for storage pools, keys, regions, and retention rules. No vendor lock-in to proprietary workflows.</p>
+            <h3>Verified accounts</h3>
+            <p>Email verification, unique social tags, new-IP alerts, permanent breach deletion, and password expiry are
+              designed as explicit states.</p>
           </div>
           <div class="security-api-visual" aria-hidden="true">
             <div class="api-window">
-              <span></span>
-              <span></span>
-              <span></span>
-              <pre><code>-> nimbus auth login
-Enter code
-VAULT-9AMP
-
--> policy attach
-workspace/client-vault</code></pre>
-            </div>
-            <div class="api-spec">
-              <pre><code>openapi: 3.0.0
-info:
-  title: Nimbus API
-paths:
-  /storage/pools:
-  /keys:
-  /regions:
-  /retention:</code></pre>
+              <pre><code>account.status = verified
+email.unique = true
+social_tag.unique = true
+password.age = 31 days</code></pre>
             </div>
           </div>
         </article>
 
         <article class="security-card compliance-card">
           <div class="security-card-copy">
-            <h3>Full compliance</h3>
-            <p>SOC 2, ISO 27001, and GDPR-ready controls help teams satisfy audits, procurement reviews, and data residency requirements.</p>
+            <h3>Bid governance</h3>
+            <p>Reverse bidding, co-bids, bidder denial, bidder selection, attached recommendations, and timer state are
+              surfaced on every relevant screen.</p>
           </div>
           <div class="compliance-list" aria-hidden="true">
             <div class="compliance-row">
               <span></span>
-              <small>SOC 2</small>
-              <strong>Type II controls</strong>
+              <small>Timer</small>
+              <strong>Required on cards</strong>
             </div>
             <div class="compliance-row">
               <span></span>
-              <small>ISO 27001</small>
-              <strong>Security management</strong>
+              <small>Reverse</small>
+              <strong>Lowest qualified</strong>
             </div>
             <div class="compliance-row">
               <span></span>
-              <small>GDPR</small>
-              <strong>Regional data policy</strong>
+              <small>Proof</small>
+              <strong>Portfolio + ratings</strong>
             </div>
           </div>
         </article>
 
         <article class="security-card economics-card">
           <div class="security-card-copy">
-            <h3>Ownership and predictable economics</h3>
-            <p>Reserved capacity, clear transfer lanes, and audit-ready billing make storage spend easy to forecast across business units.</p>
+            <h3>Payment reliability</h3>
+            <p>Receipts, declined-payment emails, five-day renewal reminders, and ten-day grace-period locks keep the
+              marketplace from drifting into manual follow-up.</p>
           </div>
-          <div class="economics-visual" aria-hidden="true">
-            <pre class="binary-map">1111111111111111111111111111
-1111111111000000111111111111
-1111111100011110001111111111
-1111111000111111000111111111
-1111111000111111000111111111
-1111111100000000001111111111
-1111110000001100000011111111
-1111100000001100000001111111
-1111110000000000000011111111
-1111111111111111111111111111</pre>
-            <div class="asset-table">
-              <div><span>Reserved tier</span><strong>24 TiB</strong></div>
-              <div><span>Transfer lane</span><strong>EU Central</strong></div>
-              <div><span>Revision</span><strong>Q603</strong></div>
-            </div>
+          <div class="asset-table" aria-hidden="true">
+            <div><span>Cards</span><strong>Enabled</strong></div>
+            <div><span>PayPal</span><strong>Enabled</strong></div>
+            <div><span>Bitcoin</span><strong>Gateway</strong></div>
+            <div><span>Grace</span><strong>No new posts</strong></div>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="console-showcase" id="plans" aria-labelledby="console-title">
+    <section class="console-showcase" aria-labelledby="console-title">
       <div class="console-showcase-heading">
-        <h2 id="console-title">The biggest forward leap in business cloud storage operations.</h2>
+        <h2 id="console-title">One dashboard language for Users, Business Owners, and admins.</h2>
         <p>
-          A single control plane for provisioning storage pools, reviewing policy, watching growth,
-          and shipping audit-ready reports without asking teams to change how they work.
+          The landing page previews the product surface: active auctions, countdowns, bidder qualification,
+          subscription status, payment state, and monthly report readiness.
         </p>
       </div>
 
       <div class="console-figure-label">
-        <span>Fig. 2</span>
-        Nimbus Grid web console
+        <span>Preview</span>
+        QUOATZ marketplace workspace
       </div>
 
       <div class="dashboard-shell">
@@ -399,70 +373,70 @@ paths:
           <span></span>
           <span></span>
           <span></span>
-          <strong></strong>
+          <strong>quoatz.app/dashboard</strong>
         </div>
         <div class="dashboard-body">
           <aside class="dashboard-sidebar">
-            <strong>Client Vault</strong>
-            <nav aria-label="Console sections">
-              <span>Workspaces</span>
-              <span class="active">Storage Pools</span>
-              <span>Retention</span>
-              <span>Access</span>
-              <span>Transfers</span>
+            <strong>QUOATZ</strong>
+            <nav aria-label="Dashboard sections">
+              <span>Requests</span>
+              <span class="active">Bids</span>
+              <span>Messages</span>
+              <span>Payments</span>
+              <span>Profiles</span>
               <span>Reports</span>
             </nav>
           </aside>
 
           <div class="dashboard-main">
             <div class="dashboard-title-row">
-              <h3>Storage Pools</h3>
-              <button type="button">New pool</button>
+              <h3>Live bid room</h3>
+              <button type="button">New request</button>
             </div>
 
-            <div class="dashboard-table" role="table" aria-label="Storage pool status">
+            <div class="dashboard-table" role="table" aria-label="QUOATZ live service requests">
               <div class="dashboard-row header" role="row">
-                <span>Name</span>
-                <span>Region</span>
-                <span>Used</span>
-                <span>Policy</span>
+                <span>Request</span>
+                <span>Timer</span>
+                <span>Bid</span>
+                <span>Plan</span>
                 <span>State</span>
               </div>
               <div class="dashboard-row" role="row">
-                <span>finance-vault</span>
-                <span>EU Central</span>
-                <span>18.4 TiB</span>
-                <span>7 years</span>
-                <strong>Healthy</strong>
+                <span>Kitchen remodel</span>
+                <span>02:14:33</span>
+                <span>$7,610</span>
+                <span>Diamond</span>
+                <strong>Reverse</strong>
               </div>
               <div class="dashboard-row" role="row">
-                <span>design-assets</span>
-                <span>US East</span>
-                <span>9.8 TiB</span>
-                <span>Versioned</span>
-                <strong>Syncing</strong>
+                <span>Fleet repair</span>
+                <span>18:03:40</span>
+                <span>$1,280</span>
+                <span>Gold</span>
+                <strong>Review</strong>
               </div>
               <div class="dashboard-row" role="row">
-                <span>legal-archive</span>
-                <span>EU Central</span>
-                <span>42.1 TiB</span>
-                <span>Immutable</span>
-                <strong>Healthy</strong>
+                <span>Childcare support</span>
+                <span>22:49:10</span>
+                <span>$420</span>
+                <span>Standard</span>
+                <strong>Local</strong>
               </div>
               <div class="dashboard-row" role="row">
-                <span>migration-lane</span>
-                <span>AP South</span>
-                <span>6.2 TiB</span>
-                <span>Temporary</span>
-                <strong>Queued</strong>
+                <span>IT migration</span>
+                <span>04:32:18</span>
+                <span>$4,900</span>
+                <span>Platinum</span>
+                <strong>Partner</strong>
               </div>
             </div>
           </div>
         </div>
 
         <div class="dashboard-toast">
-          <strong>Pool created</strong>
-          finance-vault ready
+          <strong>Bid selected</strong>
+          receipt and message thread ready
         </div>
       </div>
     </section>
@@ -470,17 +444,17 @@ paths:
     <section class="operations-cubes" id="operations" aria-labelledby="operations-title">
       <div class="operations-inner">
         <div class="operations-copy">
-          <p class="eyebrow">Operations</p>
-          <h2 id="operations-title">A control layer for every storage move your business makes.</h2>
+          <p class="eyebrow">Build path</p>
+          <h2 id="operations-title">Scalable enough to grow, simple enough to ship.</h2>
           <p>
-            Route migrations, active workspaces, archives, and compliance exports through one operational grid.
-            Nimbus Grid keeps capacity, policy, and transfer status visible before teams hit a limit.
+            The landing page points toward the planned production stack: Expo app, Next.js web, TypeScript API,
+            Postgres entitlements, R2 media, queue workers, payments, notifications, and audit logs.
           </p>
-          <a class="operations-cta" href="#plans">Plan operations</a>
+          <a class="operations-cta" href="#marketplace">Review the flow</a>
         </div>
 
         <div class="operations-visual">
-          <button class="modal-cube-shell" type="button" aria-label="Explode storage operations cube">
+          <button class="modal-cube-shell" type="button" aria-label="Expand QUOATZ stack modules">
             <span class="cube-particle" style="--tx: -210px; --ty: -132px; --tz: 80px; --s: 0.42; --r: -18deg; --d: 0ms;"></span>
             <span class="cube-particle" style="--tx: -122px; --ty: -188px; --tz: 140px; --s: 0.34; --r: 12deg; --d: 28ms;"></span>
             <span class="cube-particle" style="--tx: 156px; --ty: -170px; --tz: 120px; --s: 0.38; --r: -8deg; --d: 46ms;"></span>
@@ -489,12 +463,6 @@ paths:
             <span class="cube-particle" style="--tx: -174px; --ty: 104px; --tz: 40px; --s: 0.36; --r: -32deg; --d: 118ms;"></span>
             <span class="cube-particle" style="--tx: 188px; --ty: 86px; --tz: 150px; --s: 0.44; --r: 28deg; --d: 140ms;"></span>
             <span class="cube-particle" style="--tx: 280px; --ty: 162px; --tz: 78px; --s: 0.58; --r: -16deg; --d: 168ms;"></span>
-            <span class="cube-particle" style="--tx: -42px; --ty: -228px; --tz: 210px; --s: 0.26; --r: 34deg; --d: 188ms;"></span>
-            <span class="cube-particle" style="--tx: 62px; --ty: 224px; --tz: 175px; --s: 0.32; --r: -24deg; --d: 210ms;"></span>
-            <span class="cube-particle dot" style="--tx: -308px; --ty: -92px; --tz: 40px; --s: 0.12; --d: 24ms;"></span>
-            <span class="cube-particle dot" style="--tx: 326px; --ty: -8px; --tz: 90px; --s: 0.1; --d: 84ms;"></span>
-            <span class="cube-particle dot" style="--tx: -238px; --ty: 198px; --tz: 30px; --s: 0.11; --d: 126ms;"></span>
-            <span class="cube-particle dot" style="--tx: 142px; --ty: -246px; --tz: 70px; --s: 0.09; --d: 164ms;"></span>
             <span class="operations-core-cube">
               <span class="cube-face cube-face-front"></span>
               <span class="cube-face cube-face-back"></span>

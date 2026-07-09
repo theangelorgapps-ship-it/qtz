@@ -1,7 +1,3 @@
-const shaderFrame = document.querySelector(".shader-bg");
-const shaderBaseUrl = "https://fragcoord.xyz/embed/c6zisyc6";
-const maxShaderWidth = 1422;
-const maxShaderHeight = 800;
 const consoleTabs = Array.from(document.querySelectorAll(".console-tab"));
 const consolePanes = Array.from(document.querySelectorAll(".console-pane"));
 const accordionSection = document.querySelector(".platform-accordion");
@@ -12,53 +8,18 @@ const pricingBars = Array.from(document.querySelectorAll(".pricing-bar"));
 const operationsCube = document.querySelector(".modal-cube-shell");
 let typingTimer;
 
-function updateShaderViewport() {
-  if (!shaderFrame) return;
-  const aspect = window.innerWidth / Math.max(window.innerHeight, 1);
-  let width = maxShaderWidth;
-  let height = Math.round(width / aspect);
-
-  if (height > maxShaderHeight) {
-    height = maxShaderHeight;
-    width = Math.round(height * aspect);
-  }
-
-  width = Math.max(320, Math.min(maxShaderWidth, width));
-  height = Math.max(180, Math.min(maxShaderHeight, height));
-
-  const nextSrc = `${shaderBaseUrl}?viewport=${width}x${height}`;
-  if (shaderFrame.src !== nextSrc) shaderFrame.src = nextSrc;
-
-  const scale = Math.max(window.innerWidth / width, (window.innerHeight + 110) / height);
-  shaderFrame.style.setProperty("--shader-scale", scale.toFixed(3));
-  shaderFrame.style.width = `${width}px`;
-  shaderFrame.style.height = `${height}px`;
-}
-
-let resizeTimer;
-window.addEventListener("resize", () => {
-  window.clearTimeout(resizeTimer);
-  resizeTimer = window.setTimeout(updateShaderViewport, 180);
-});
-
-updateShaderViewport();
-
 function typeInto(target) {
   const value = target.dataset.typed || "";
   let index = 0;
   target.textContent = "";
-  target.dataset.typing = "true";
 
   function tick() {
     target.textContent = value.slice(0, index);
     index += 1;
 
     if (index <= value.length) {
-      typingTimer = window.setTimeout(tick, 42);
-      return;
+      typingTimer = window.setTimeout(tick, 34);
     }
-
-    target.dataset.typing = "false";
   }
 
   tick();
@@ -91,7 +52,9 @@ consoleTabs.forEach((tab) => {
   });
 });
 
-activateConsoleTab("cli");
+if (consoleTabs.length) {
+  activateConsoleTab(consoleTabs[0].dataset.tab);
+}
 
 function activateAccordionPanel(panelName) {
   accordionTabs.forEach((tab) => {
@@ -119,22 +82,20 @@ function updateScrollAccordion() {
   const collapsedHeight = window.innerWidth <= 820 ? 96 : 84;
 
   const cardPositions = accordionCards.map((_, index) => {
-    let y = 0;
+    if (index === 0) return 0;
 
-    if (index > 0) {
-      const segmentProgress = Math.min(1, Math.max(0, rawIndex - (index - 1)));
-      const startY = stackHeight + collapsedHeight;
-      const endY = index * collapsedHeight;
-      y = startY + (endY - startY) * segmentProgress;
-    }
-
-    return Math.round(y);
+    const segmentProgress = Math.min(1, Math.max(0, rawIndex - (index - 1)));
+    const startY = stackHeight + collapsedHeight;
+    const endY = index * collapsedHeight;
+    return Math.round(startY + (endY - startY) * segmentProgress);
   });
 
   accordionCards.forEach((card, index) => {
     const y = cardPositions[index];
     const nextY = cardPositions[index + 1];
-    const visibleHeight = typeof nextY === "number" ? Math.max(collapsedHeight, Math.min(stackHeight, nextY + 2)) : stackHeight;
+    const visibleHeight = typeof nextY === "number"
+      ? Math.max(collapsedHeight, Math.min(stackHeight, nextY + 2))
+      : stackHeight;
     const clipBottom = Math.max(0, stackHeight - visibleHeight);
 
     card.style.setProperty("--card-y", `${Math.round(y)}px`);
@@ -149,8 +110,9 @@ function updateScrollAccordion() {
 accordionTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     if (!accordionSection || !accordionCards.length) return;
+
     const index = accordionCards.findIndex((card) => card.dataset.accordionCard === tab.dataset.accordionTab);
-    const maxIndex = accordionCards.length - 1;
+    const maxIndex = Math.max(1, accordionCards.length - 1);
     const scrollable = accordionSection.offsetHeight - window.innerHeight;
     const target = accordionSection.offsetTop + (index / maxIndex) * scrollable;
     window.scrollTo({ top: target, behavior: "smooth" });
@@ -171,7 +133,7 @@ function updatePricingBars() {
   pricingBars.forEach((bar, index) => {
     const wave = Math.sin(progress * Math.PI * 2 + index * 0.72);
     const secondaryWave = Math.cos(progress * Math.PI + index * 0.34);
-    const morph = Math.round(wave * 34 + secondaryWave * 14);
+    const morph = Math.round(wave * 26 + secondaryWave * 10);
     bar.style.setProperty("--bar-morph", `${morph}px`);
   });
 }

@@ -1,14 +1,37 @@
-# Nimbus Grid
+# QUOATZ Landing Page
 
-Static landing page concept for a B2B cloud storage capacity platform.
+Static Vite landing page for QUOATZ, a premium service marketplace for Users, Business Owners,
+timed bidding, reverse auctions, subscription permissions, secure payments, and verified account
+flows.
+
+## Documentation
+
+- [How to run and review the landing page](docs/how-to-run-landing-page.md)
+- [QUOATZ landing page reference](docs/reference-landing-page.md)
+- [QUOATZ flow and stack explanation](docs/explanation-flow-and-stack.md)
 
 ## Run locally
 
-Open `index.html` directly, or serve the project folder:
+Install dependencies and start Vite:
 
 ```bash
-python3 -m http.server 8081 --bind 127.0.0.1
+npm install
+npm run dev
 ```
+
+Build the static site:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+You can also open `index.html` directly for a simple static smoke check.
 
 ## Run with Docker
 
