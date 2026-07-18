@@ -2,6 +2,10 @@
 
 Generated from the completed `/plan-eng-review`. This document turns the approved product blueprint into build-actionable work. Product rules remain authoritative in [`PRODUCT_BLUEPRINT.md`](./PRODUCT_BLUEPRINT.md); test acceptance remains authoritative in [`ENGINEERING_TEST_PLAN.md`](./ENGINEERING_TEST_PLAN.md).
 
+## Implementation status: 18 July 2026
+
+The first web milestone is complete. `apps/web` now contains the Next.js 16 App Router foundation, the dual-theme Quaotz design system, marketing home, Customer discovery and listing routes, interactive bid submission, account-state shells, responsive mobile navigation, `/admin`, loading/error states, and Playwright smoke coverage. This is a UI and fixture-backed vertical slice of T1, T2, T12, and T14; those tasks remain open until their backend, generated-contract, CI, and full route-state acceptance criteria are complete. Expo remains the next client phase after the shared domain/API contract is implemented.
+
 ## What already exists
 
 | Existing asset | Current value | Reuse decision |
@@ -10,7 +14,7 @@ Generated from the completed `/plan-eng-review`. This document turns the approve
 | Upwork iOS Mobbin flows | Interaction references for onboarding, profile creation, discovery, and bid submission | Use as interaction research only; do not copy branding, assets, text, or proprietary rules |
 | Product blueprint | Locked business model, architecture, data model, state machines, security, tests, and SLOs | Treat as the implementation contract |
 | Engineering test plan | Branch inventory, fixtures, failure injection, CI gates, and release criteria | Implement tests alongside each task and use as `/qa` input |
-| Existing application code | None inside `quaotz/`; the folder currently contains planning artifacts only | Build fresh; do not couple Quaotz to unrelated workspace projects |
+| Existing application code | Next.js web foundation in `apps/web`, backed by typed fixtures and automated browser checks | Extend within the Quaotz workspace; do not couple Quaotz to unrelated workspace projects |
 
 ## NOT in scope
 
