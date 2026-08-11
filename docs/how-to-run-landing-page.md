@@ -29,7 +29,7 @@ This guide gets the static QUOATZ landing page running locally, verifies the bui
 3. Open the page and review the primary flow.
 
    Check the first screen, then scroll through Marketplace, Plans, Trust, dashboard preview, and Stack.
-   The hero preview tabs should switch between Request, Bids, and Pay.
+   The first screen should use the QUOATZ dashboard image as a full-bleed product scene behind the copy.
 
 4. Build the production bundle.
 
@@ -60,7 +60,8 @@ Manual checks:
 - The page title reads `QUOATZ Marketplace`.
 - No visible legacy product copy remains.
 - The hero H1 is `QUOATZ`.
-- The Request, Bids, and Pay tabs animate typed status text.
+- The home hero uses `/assets/quoatz-home-hero.png`.
+- The hero copy mentions service requests, Business Owners, timed bids, reverse bidding, and secure payment paths.
 - The Marketplace section switches active panels on scroll and tab click.
 - The Stack cube toggles open on click, Space, or Enter.
 

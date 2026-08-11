@@ -1,60 +1,9 @@
-const consoleTabs = Array.from(document.querySelectorAll(".console-tab"));
-const consolePanes = Array.from(document.querySelectorAll(".console-pane"));
 const accordionSection = document.querySelector(".platform-accordion");
 const accordionTabs = Array.from(document.querySelectorAll("[data-accordion-tab]"));
 const accordionCards = Array.from(document.querySelectorAll("[data-accordion-card]"));
 const pricingSection = document.querySelector(".pricing-section");
 const pricingBars = Array.from(document.querySelectorAll(".pricing-bar"));
 const operationsCube = document.querySelector(".modal-cube-shell");
-let typingTimer;
-
-function typeInto(target) {
-  const value = target.dataset.typed || "";
-  let index = 0;
-  target.textContent = "";
-
-  function tick() {
-    target.textContent = value.slice(0, index);
-    index += 1;
-
-    if (index <= value.length) {
-      typingTimer = window.setTimeout(tick, 34);
-    }
-  }
-
-  tick();
-}
-
-function activateConsoleTab(tabName) {
-  window.clearTimeout(typingTimer);
-
-  consoleTabs.forEach((tab) => {
-    const isActive = tab.dataset.tab === tabName;
-    tab.classList.toggle("active", isActive);
-    tab.setAttribute("aria-selected", String(isActive));
-  });
-
-  consolePanes.forEach((pane) => {
-    const isActive = pane.dataset.pane === tabName;
-    pane.classList.toggle("active", isActive);
-    pane.hidden = !isActive;
-
-    if (isActive) {
-      const typedTarget = pane.querySelector("[data-typed]");
-      if (typedTarget) typeInto(typedTarget);
-    }
-  });
-}
-
-consoleTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    activateConsoleTab(tab.dataset.tab);
-  });
-});
-
-if (consoleTabs.length) {
-  activateConsoleTab(consoleTabs[0].dataset.tab);
-}
 
 function activateAccordionPanel(panelName) {
   accordionTabs.forEach((tab) => {

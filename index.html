@@ -22,6 +22,10 @@
 <body>
   <main>
     <section class="hero" aria-labelledby="hero-title">
+      <picture class="hero-media" aria-hidden="true">
+        <img src="/assets/quoatz-home-hero.png" alt="" />
+      </picture>
+
       <header class="site-header">
         <a class="brand" href="#" aria-label="QUOATZ home">
           <span class="brand-mark" aria-hidden="true">Q</span>
@@ -40,87 +44,21 @@
 
       <div class="hero-layout">
         <div class="hero-content">
-          <p class="eyebrow">Verified service marketplace</p>
+          <p class="eyebrow">Premium service marketplace</p>
           <h1 id="hero-title">QUOATZ</h1>
           <p class="hero-copy">
-            A dark-metal marketplace where Users post service requests, Business Owners bid with
-            proof, reverse auctions stay timed, and every payment path feels built for trust.
+            <span>Users post verified service requests.</span>
+            <span>Business Owners bid with ratings, portfolios, and recommendations.</span>
+            <span>Timers, reverse bidding, and secure payments stay visible.</span>
           </p>
+          <div class="hero-proof" aria-label="QUOATZ marketplace highlights">
+            <span>Live request timers</span>
+            <span>Lowest qualified bids</span>
+            <span>Plan-based access</span>
+          </div>
           <div class="hero-actions" aria-label="QUOATZ primary actions">
-            <a class="primary-action" href="#marketplace">Explore flow</a>
-            <a class="secondary-action" href="#operations">View stack</a>
-          </div>
-        </div>
-
-        <div class="product-stage" aria-label="QUOATZ marketplace product preview">
-          <div class="phone-rail" aria-hidden="true">
-            <div class="phone-top"></div>
-            <div class="phone-card live">
-              <span>Reverse bid</span>
-              <strong>02:14:33</strong>
-            </div>
-            <div class="phone-card">
-              <span>Qualified</span>
-              <strong>18 owners</strong>
-            </div>
-            <div class="phone-card">
-              <span>Payment</span>
-              <strong>Escrow ready</strong>
-            </div>
-          </div>
-
-          <div class="market-console">
-            <div class="console-tabs" role="tablist" aria-label="Marketplace preview views">
-              <button class="console-tab active" type="button" role="tab" aria-selected="true"
-                data-tab="request">Request</button>
-              <button class="console-tab" type="button" role="tab" aria-selected="false" data-tab="bids">Bids</button>
-              <button class="console-tab" type="button" role="tab" aria-selected="false" data-tab="pay">Pay</button>
-            </div>
-
-            <div class="console-pane active" data-pane="request">
-              <div class="console-heading">
-                <span>Service request</span>
-                <strong>Kitchen remodel</strong>
-              </div>
-              <div class="request-grid">
-                <span>Budget</span><strong>$8,500</strong>
-                <span>Target date</span><strong>Aug 30</strong>
-                <span>Requirements</span><strong>Portfolio + 3.0 rating</strong>
-                <span>State</span><strong>Georgia</strong>
-              </div>
-              <pre class="terminal-output" data-typed="liability confirmed | auction timer started"></pre>
-            </div>
-
-            <div class="console-pane" data-pane="bids" hidden>
-              <div class="bid-list">
-                <div class="bid-row">
-                  <span>Business Owner</span>
-                  <strong>$7,940</strong>
-                  <small>4.8 rating</small>
-                </div>
-                <div class="bid-row selected">
-                  <span>Lowest qualified</span>
-                  <strong>$7,610</strong>
-                  <small>reverse lead</small>
-                </div>
-                <div class="bid-row">
-                  <span>Co-bid team</span>
-                  <strong>$8,050</strong>
-                  <small>2 partners</small>
-                </div>
-              </div>
-              <pre class="terminal-output" data-typed="3 new bids | 2 recommendations attached"></pre>
-            </div>
-
-            <div class="console-pane" data-pane="pay" hidden>
-              <div class="payment-stack">
-                <div><span>Cards</span><strong>Visa, Mastercard, AmEx, Discover</strong></div>
-                <div><span>Wallet</span><strong>PayPal ready</strong></div>
-                <div><span>Crypto</span><strong>Bitcoin gateway queued</strong></div>
-                <div><span>Receipts</span><strong>Email automation active</strong></div>
-              </div>
-              <pre class="terminal-output" data-typed="grace rules | decline alerts | receipts"></pre>
-            </div>
+            <a class="primary-action" href="#marketplace">See the flow</a>
+            <a class="secondary-action" href="#plans">Compare plans</a>
           </div>
         </div>
       </div>

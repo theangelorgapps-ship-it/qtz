@@ -46,7 +46,7 @@ Expo mobile app        Next.js web app
 ## Flow represented on the page
 
 1. The hero shows the first user promise: QUOATZ is a premium service marketplace, not a storage product.
-2. The product preview shows Request, Bids, and Pay states.
+2. The full-bleed product image shows desktop and mobile dashboard states for requests, bids, timers, payments, activity, and earnings.
 3. The Marketplace section explains service request creation, countdown timers, Business Owner proof, and payment/account rules.
 4. The Plans section maps Standard, Gold, Diamond, and Platinum permissions.
 5. The Trust section turns account, bid, and payment rules into visible user-facing states.
@@ -57,7 +57,7 @@ Expo mobile app        Next.js web app
 
 The landing page uses plain HTML, CSS, and JavaScript instead of a component framework. That keeps cost and hosting complexity low, but it means repeated UI fragments are not componentized yet.
 
-The page includes product mockups built with HTML and CSS instead of screenshot assets. That keeps the repo self-contained and responsive, but real app screenshots should replace or supplement the mockups once the working QUOATZ dashboards exist.
+The home hero uses a static generated product scene instead of rebuilding the entire dashboard mockup in HTML. That gives the first screen a stronger premium visual signal, but the image should eventually be replaced with a real QUOATZ app screenshot once the production dashboard exists.
 
 The stack section describes the target production architecture, but the repo itself remains static. That separation is intentional. The landing page can launch before the full backend is connected.
 

@@ -1,6 +1,6 @@
 # QUOATZ landing page reference
 
-The QUOATZ landing page is a static Vite site. It uses `index.html` for content, `styles.css` for the dark metallic visual system, and `script.js` for lightweight tab, scroll, pricing-bar, and stack-cube interactions.
+The QUOATZ landing page is a static Vite site. It uses `index.html` for content, `styles.css` for the dark metallic visual system, and `script.js` for lightweight scroll, pricing-bar, and stack-cube interactions.
 
 ## Public files
 
@@ -8,7 +8,8 @@ The QUOATZ landing page is a static Vite site. It uses `index.html` for content,
 |---|---|
 | `index.html` | Defines the full landing page content and accessible structure. |
 | `styles.css` | Defines the QUOATZ visual system, responsive layout, dashboard previews, and motion styles. |
-| `script.js` | Runs hero tabs, typed status text, scroll accordion behavior, pricing bar motion, and stack cube toggling. |
+| `script.js` | Runs scroll accordion behavior, pricing bar motion, and stack cube toggling. |
+| `public/assets/quoatz-home-hero.png` | Full-bleed homepage visual showing the QUOATZ marketplace dashboard on desktop and mobile. |
 | `vite.config.js` | Uses default Vite configuration. |
 | `postcss.config.js` | Keeps Vite from inheriting unrelated parent PostCSS settings. |
 | `Dockerfile` | Serves the static files through `nginx:alpine`. |
@@ -18,7 +19,7 @@ The QUOATZ landing page is a static Vite site. It uses `index.html` for content,
 
 | Section | Anchor | Description |
 |---|---|---|
-| Hero | `#` | Brand-first first viewport with QUOATZ headline, marketplace copy, CTAs, mobile preview, and desktop console preview. |
+| Hero | `#` | Brand-first first viewport with full-bleed marketplace dashboard image, QUOATZ headline, proof points, and CTAs. |
 | Marketplace engine | `#marketplace` | Scroll-driven accordion for service requests, timers, profiles, and payments. |
 | Subscription levels | `#plans` | Standard, Gold, Diamond, and Platinum entitlement summary. |
 | Trust controls | `#trust` | Account verification, bid governance, and payment reliability. |
@@ -26,17 +27,6 @@ The QUOATZ landing page is a static Vite site. It uses `index.html` for content,
 | Build path | `#operations` | Stack direction for Expo, Next.js, TypeScript API, Postgres, R2, jobs, payments, and audit logs. |
 
 ## JavaScript behavior
-
-### Hero console tabs
-
-Selector: `.console-tab`
-
-Each tab uses `data-tab`. Each pane uses matching `data-pane`. Activating a tab:
-
-- Sets `.active` on the selected tab and pane.
-- Updates `aria-selected`.
-- Toggles the `hidden` attribute on panes.
-- Types the pane status from `data-typed`.
 
 ### Marketplace accordion
 
