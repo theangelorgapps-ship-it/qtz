@@ -1,4 +1,5 @@
 const navbar = document.querySelector("[data-navbar]");
+const scrollSentinel = document.querySelector("[data-scroll-sentinel]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobilePanel = document.querySelector("[data-mobile-panel]");
 const menuBackdrop = document.querySelector("[data-menu-backdrop]");
@@ -12,13 +13,15 @@ const revealTargets = Array.from(document.querySelectorAll(".reveal-on-scroll"))
 let isMenuOpen = false;
 let isVideoOpen = false;
 
+document.documentElement.classList.add("has-motion-js");
+
 function updateBodyLock() {
   document.body.classList.toggle("is-locked", isMenuOpen || isVideoOpen);
 }
 
-function updateNavbar() {
-  if (!navbar) return;
-  navbar.classList.toggle("is-scrolled", window.scrollY > 50);
+function isTargetInView(target) {
+  const rect = target.getBoundingClientRect();
+  return rect.top < window.innerHeight - 80 && rect.bottom > 80;
 }
 
 function setMenuOpen(nextState) {
@@ -74,8 +77,16 @@ window.addEventListener("keydown", (event) => {
   setVideoOpen(false);
 });
 
-window.addEventListener("scroll", updateNavbar, { passive: true });
-updateNavbar();
+if (navbar && scrollSentinel && "IntersectionObserver" in window) {
+  const navObserver = new IntersectionObserver(
+    ([entry]) => {
+      navbar.classList.toggle("is-scrolled", !entry.isIntersecting);
+    },
+    { threshold: 0 },
+  );
+
+  navObserver.observe(scrollSentinel);
+}
 
 if (marqueeTrack) {
   const originalCards = Array.from(marqueeTrack.children);
@@ -115,7 +126,11 @@ if ("IntersectionObserver" in window && revealTargets.length) {
 
   revealTargets.forEach((target, index) => {
     target.style.animationDelay = `${index * 0.08}s`;
-    observer.observe(target);
+    if (isTargetInView(target)) {
+      target.classList.add("is-visible");
+    } else {
+      observer.observe(target);
+    }
   });
 } else {
   revealTargets.forEach((target) => target.classList.add("is-visible"));
