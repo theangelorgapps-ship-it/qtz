@@ -1,6 +1,6 @@
 # How to run and review the QUOATZ landing page
 
-This guide gets the static QUOATZ landing page running locally, verifies the build, and gives you a quick review loop for the marketplace flow.
+This guide gets the static QUOATZ landing page running locally, verifies the build, and gives you a quick review loop for the Steadyflow-inspired marketplace homepage.
 
 ## Prerequisites
 
@@ -28,8 +28,7 @@ This guide gets the static QUOATZ landing page running locally, verifies the bui
 
 3. Open the page and review the primary flow.
 
-   Check the first screen, then scroll through Marketplace, Plans, Trust, dashboard preview, and Stack.
-   The first screen should use the QUOATZ dashboard image as a full-bleed product scene behind the copy.
+   Check the fixed pill navigation, cinematic video hero, QUOATZ phone mockup, results marquee, and marketplace counter section.
 
 4. Build the production bundle.
 
@@ -57,13 +56,14 @@ The command should complete without errors and produce `dist/index.html`.
 
 Manual checks:
 
-- The page title reads `QUOATZ Marketplace`.
-- No visible legacy product copy remains.
-- The hero H1 is `QUOATZ`.
-- The home hero uses `/assets/quoatz-home-hero.png`.
-- The hero copy mentions service requests, Business Owners, timed bids, reverse bidding, and secure payment paths.
-- The Marketplace section switches active panels on scroll and tab click.
-- The Stack cube toggles open on click, Space, or Enter.
+- The page title reads `QUOATZ - Service requests that never stall`.
+- No visible legacy cloud-storage or dark dashboard-page copy remains.
+- The hero headline reads `Service requests that never stall`.
+- The primary hero video plays behind the centered copy and phone mockup.
+- The phone mockup mentions requests, active bids, reverse auction timing, and matching.
+- The mobile menu opens, closes, and locks body scroll.
+- The video modal opens from `See it live` and closes on the X, backdrop, or Escape.
+- The results marquee repeats continuously and pauses on hover.
 
 ## Troubleshooting
 

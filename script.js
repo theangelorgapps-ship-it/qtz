@@ -1,104 +1,122 @@
-const accordionSection = document.querySelector(".platform-accordion");
-const accordionTabs = Array.from(document.querySelectorAll("[data-accordion-tab]"));
-const accordionCards = Array.from(document.querySelectorAll("[data-accordion-card]"));
-const pricingSection = document.querySelector(".pricing-section");
-const pricingBars = Array.from(document.querySelectorAll(".pricing-bar"));
-const operationsCube = document.querySelector(".modal-cube-shell");
+const navbar = document.querySelector("[data-navbar]");
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const mobilePanel = document.querySelector("[data-mobile-panel]");
+const menuBackdrop = document.querySelector("[data-menu-backdrop]");
+const videoOverlay = document.querySelector("[data-video-overlay]");
+const openVideoButton = document.querySelector("[data-open-video]");
+const closeVideoButton = document.querySelector("[data-close-video]");
+const marqueeTrack = document.querySelector("[data-marquee-track]");
+const countChip = document.querySelector("[data-count-chip]");
+const revealTargets = Array.from(document.querySelectorAll(".reveal-on-scroll"));
 
-function activateAccordionPanel(panelName) {
-  accordionTabs.forEach((tab) => {
-    const isActive = tab.dataset.accordionTab === panelName;
-    tab.classList.toggle("active", isActive);
-    tab.setAttribute("aria-selected", String(isActive));
-  });
+let isMenuOpen = false;
+let isVideoOpen = false;
 
-  accordionCards.forEach((card) => {
-    card.classList.toggle("active", card.dataset.accordionCard === panelName);
+function updateBodyLock() {
+  document.body.classList.toggle("is-locked", isMenuOpen || isVideoOpen);
+}
+
+function updateNavbar() {
+  if (!navbar) return;
+  navbar.classList.toggle("is-scrolled", window.scrollY > 50);
+}
+
+function setMenuOpen(nextState) {
+  if (!menuToggle || !mobilePanel) return;
+
+  isMenuOpen = nextState;
+  document.body.classList.toggle("menu-open", isMenuOpen);
+  menuToggle.setAttribute("aria-expanded", String(isMenuOpen));
+  menuToggle.setAttribute("aria-label", isMenuOpen ? "Close navigation menu" : "Open navigation menu");
+  updateBodyLock();
+}
+
+function setVideoOpen(nextState) {
+  if (!videoOverlay) return;
+
+  isVideoOpen = nextState;
+  videoOverlay.classList.toggle("is-open", isVideoOpen);
+  videoOverlay.setAttribute("aria-hidden", String(!isVideoOpen));
+  updateBodyLock();
+}
+
+if (menuToggle) {
+  menuToggle.addEventListener("click", () => setMenuOpen(!isMenuOpen));
+}
+
+if (menuBackdrop) {
+  menuBackdrop.addEventListener("click", () => setMenuOpen(false));
+}
+
+if (mobilePanel) {
+  mobilePanel.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMenuOpen(false));
   });
 }
 
-function updateScrollAccordion() {
-  if (!accordionSection || !accordionCards.length) return;
-
-  const rect = accordionSection.getBoundingClientRect();
-  const scrollable = Math.max(1, rect.height - window.innerHeight);
-  const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
-  const maxIndex = accordionCards.length - 1;
-  const rawIndex = progress * maxIndex;
-  const activeIndex = Math.min(maxIndex, Math.max(0, Math.round(rawIndex)));
-  const stack = document.querySelector(".accordion-stack");
-  const stackHeight = stack ? stack.clientHeight : window.innerHeight * 0.74;
-  const collapsedHeight = window.innerWidth <= 820 ? 96 : 84;
-
-  const cardPositions = accordionCards.map((_, index) => {
-    if (index === 0) return 0;
-
-    const segmentProgress = Math.min(1, Math.max(0, rawIndex - (index - 1)));
-    const startY = stackHeight + collapsedHeight;
-    const endY = index * collapsedHeight;
-    return Math.round(startY + (endY - startY) * segmentProgress);
-  });
-
-  accordionCards.forEach((card, index) => {
-    const y = cardPositions[index];
-    const nextY = cardPositions[index + 1];
-    const visibleHeight = typeof nextY === "number"
-      ? Math.max(collapsedHeight, Math.min(stackHeight, nextY + 2))
-      : stackHeight;
-    const clipBottom = Math.max(0, stackHeight - visibleHeight);
-
-    card.style.setProperty("--card-y", `${Math.round(y)}px`);
-    card.style.setProperty("--card-clip-bottom", `${Math.round(clipBottom)}px`);
-    card.style.zIndex = String(index + 1);
-  });
-
-  const activeCard = accordionCards[activeIndex];
-  if (activeCard) activateAccordionPanel(activeCard.dataset.accordionCard);
+if (openVideoButton) {
+  openVideoButton.addEventListener("click", () => setVideoOpen(true));
 }
 
-accordionTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    if (!accordionSection || !accordionCards.length) return;
+if (closeVideoButton) {
+  closeVideoButton.addEventListener("click", () => setVideoOpen(false));
+}
 
-    const index = accordionCards.findIndex((card) => card.dataset.accordionCard === tab.dataset.accordionTab);
-    const maxIndex = Math.max(1, accordionCards.length - 1);
-    const scrollable = accordionSection.offsetHeight - window.innerHeight;
-    const target = accordionSection.offsetTop + (index / maxIndex) * scrollable;
-    window.scrollTo({ top: target, behavior: "smooth" });
+if (videoOverlay) {
+  videoOverlay.addEventListener("click", (event) => {
+    if (event.target === videoOverlay) setVideoOpen(false);
   });
+}
+
+window.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  setMenuOpen(false);
+  setVideoOpen(false);
 });
 
-window.addEventListener("scroll", updateScrollAccordion, { passive: true });
-window.addEventListener("resize", updateScrollAccordion);
-updateScrollAccordion();
+window.addEventListener("scroll", updateNavbar, { passive: true });
+updateNavbar();
 
-function updatePricingBars() {
-  if (!pricingSection || !pricingBars.length) return;
+if (marqueeTrack) {
+  const originalCards = Array.from(marqueeTrack.children);
 
-  const rect = pricingSection.getBoundingClientRect();
-  const viewport = window.innerHeight || 1;
-  const progress = Math.min(1, Math.max(0, (viewport - rect.top) / (viewport + rect.height)));
-
-  pricingBars.forEach((bar, index) => {
-    const wave = Math.sin(progress * Math.PI * 2 + index * 0.72);
-    const secondaryWave = Math.cos(progress * Math.PI + index * 0.34);
-    const morph = Math.round(wave * 26 + secondaryWave * 10);
-    bar.style.setProperty("--bar-morph", `${morph}px`);
-  });
+  for (let repeat = 0; repeat < 2; repeat += 1) {
+    originalCards.forEach((card) => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      marqueeTrack.appendChild(clone);
+    });
+  }
 }
 
-window.addEventListener("scroll", updatePricingBars, { passive: true });
-window.addEventListener("resize", updatePricingBars);
-updatePricingBars();
+if (countChip) {
+  const counts = ["51+", "52+", "53+", "54+"];
+  let countIndex = 0;
 
-if (operationsCube) {
-  const toggleCube = () => operationsCube.classList.toggle("is-exploded");
+  window.setInterval(() => {
+    countIndex = (countIndex + 1) % counts.length;
+    countChip.textContent = counts[countIndex];
+    countChip.classList.add("is-popping");
+    window.setTimeout(() => countChip.classList.remove("is-popping"), 700);
+  }, 2000);
+}
 
-  operationsCube.addEventListener("click", toggleCube);
-  operationsCube.addEventListener("keydown", (event) => {
-    if (event.key === " " || event.key === "Enter") {
-      event.preventDefault();
-      toggleCube();
-    }
+if ("IntersectionObserver" in window && revealTargets.length) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -100px 0px", threshold: 0.1 },
+  );
+
+  revealTargets.forEach((target, index) => {
+    target.style.animationDelay = `${index * 0.08}s`;
+    observer.observe(target);
   });
+} else {
+  revealTargets.forEach((target) => target.classList.add("is-visible"));
 }

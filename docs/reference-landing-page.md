@@ -1,15 +1,14 @@
 # QUOATZ landing page reference
 
-The QUOATZ landing page is a static Vite site. It uses `index.html` for content, `styles.css` for the dark metallic visual system, and `script.js` for lightweight scroll, pricing-bar, and stack-cube interactions.
+The QUOATZ landing page is a static Vite site. It uses `index.html` for content, `styles.css` for the Steadyflow-inspired light visual system, and `script.js` for lightweight navigation, modal, reveal, count, and marquee interactions.
 
 ## Public files
 
 | File | Purpose |
 |---|---|
 | `index.html` | Defines the full landing page content and accessible structure. |
-| `styles.css` | Defines the QUOATZ visual system, responsive layout, dashboard previews, and motion styles. |
-| `script.js` | Runs scroll accordion behavior, pricing bar motion, and stack cube toggling. |
-| `public/assets/quoatz-home-hero.png` | Full-bleed homepage visual showing the QUOATZ marketplace dashboard on desktop and mobile. |
+| `styles.css` | Defines the light page background, fixed pill navigation, video hero, glass phone mockup, results cards, counter visual, responsive layout, and motion styles. |
+| `script.js` | Runs navbar scroll state, mobile menu locking, video modal toggling, marquee duplication, count cycling, and scroll reveal behavior. |
 | `vite.config.js` | Uses default Vite configuration. |
 | `postcss.config.js` | Keeps Vite from inheriting unrelated parent PostCSS settings. |
 | `Dockerfile` | Serves the static files through `nginx:alpine`. |
@@ -19,36 +18,52 @@ The QUOATZ landing page is a static Vite site. It uses `index.html` for content,
 
 | Section | Anchor | Description |
 |---|---|---|
-| Hero | `#` | Brand-first first viewport with full-bleed marketplace dashboard image, QUOATZ headline, proof points, and CTAs. |
-| Marketplace engine | `#marketplace` | Scroll-driven accordion for service requests, timers, profiles, and payments. |
-| Subscription levels | `#plans` | Standard, Gold, Diamond, and Platinum entitlement summary. |
-| Trust controls | `#trust` | Account verification, bid governance, and payment reliability. |
-| Dashboard preview | none | Product preview for Users, Business Owners, admins, bids, timers, and reports. |
-| Build path | `#operations` | Stack direction for Expo, Next.js, TypeScript API, Postgres, R2, jobs, payments, and audit logs. |
+| Navbar | fixed | White rounded pill navigation with QUOATZ logo, page links, store buttons, and mobile hamburger menu. |
+| Hero | `#hero` | Full-screen video hero with frosted announcement pill, QUOATZ headline, CTAs, glass phone marketplace mockup, and curved page transition. |
+| Results | `#results` | Social-proof header, avatar count chip, star asset, and looping photo-card marquee with QUOATZ outcomes. |
+| Counter | `#counter` | Marketplace-progress metric, video visual, cloud overlay, and bottom fade. |
+| Video modal | none | Full-screen modal containing the supplied demo iframe. |
 
 ## JavaScript behavior
 
-### Marketplace accordion
+### Navbar and mobile menu
 
 Selectors:
 
-- `[data-accordion-tab]`
-- `[data-accordion-card]`
-- `.platform-accordion`
+- `[data-navbar]`
+- `[data-menu-toggle]`
+- `[data-mobile-panel]`
+- `[data-menu-backdrop]`
 
-The script reads scroll progress inside `.platform-accordion`, positions the stacked cards, clips lower cards, and activates the matching tab. Clicking an accordion tab scrolls to the matching segment.
+The navbar receives `.is-scrolled` after 50px of page scroll. The mobile menu toggles `body.menu-open`, updates `aria-expanded`, closes from the backdrop or menu links, and locks body scroll while open.
 
-### Pricing bars
+### Video modal
 
-Selector: `.pricing-bar`
+Selectors:
 
-The bars update `--bar-morph` from scroll progress. CSS combines that variable with each bar's static `--bar-height`.
+- `[data-open-video]`
+- `[data-video-overlay]`
+- `[data-close-video]`
 
-### Stack cube
+The modal toggles `.is-open`, updates `aria-hidden`, locks body scroll, and closes on the close button, backdrop click, or Escape.
 
-Selector: `.modal-cube-shell`
+### Results marquee
 
-Clicking, pressing Space, or pressing Enter toggles `.is-exploded`, which expands the stack modules through CSS transforms.
+Selector: `[data-marquee-track]`
+
+The six result cards are cloned twice so the CSS marquee can animate three full sets across the screen.
+
+### Avatar count
+
+Selector: `[data-count-chip]`
+
+The count cycles through `51+`, `52+`, `53+`, and `54+` every two seconds with a small scale pop.
+
+### Scroll reveal
+
+Selector: `.reveal-on-scroll`
+
+An `IntersectionObserver` adds `.is-visible` once each section block enters the viewport.
 
 ## Design tokens
 
@@ -56,14 +71,15 @@ The main tokens live in `:root` in `styles.css`.
 
 | Token | Use |
 |---|---|
-| `--bg` | Page background. |
-| `--surface`, `--surface-2`, `--panel` | Dark metallic surfaces. |
-| `--ink`, `--muted`, `--soft` | Text hierarchy. |
-| `--line`, `--line-strong` | Borders and separators. |
-| `--gold`, `--gold-strong` | Primary metallic action and timer accents. |
-| `--silver` | Chrome highlights. |
-| `--teal` | Live, verified, and dashboard state accents. |
-| `--danger` | Reserved for negative or declined-payment states. |
+| `--page` | Light page background and curve fill. |
+| `--ink` | Near-black text, buttons, overlays, and hero fallback. |
+| `--muted` | Secondary text. |
+| `--soft` | Soft gray card labels. |
+| `--blue` | Primary QUOATZ action and progress accent. |
+| `--logo` | QUOATZ logo fill. |
+| `--pill-shadow` | Rounded navbar and panel shadow. |
+| `--font-headline` | Brand headlines, big numbers, and phone greeting. |
+| `--font-body` | Body copy, UI labels, navigation, and CTAs. |
 
 ## Commands
 

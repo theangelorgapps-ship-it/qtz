@@ -6,414 +6,375 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="QUOATZ is a premium marketplace for service requests, business-owner profiles, reverse bidding, subscriptions, secure payments, and verified marketplace operations."
+    content="QUOATZ is a premium service marketplace where Users post requests, Business Owners compete with trusted bids, and every timer, plan, and payment state stays visible."
   />
-  <meta name="theme-color" content="#070808" />
-  <title>QUOATZ Marketplace</title>
+  <meta name="theme-color" content="#f7f7f7" />
+  <title>QUOATZ - Service requests that never stall</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@700&family=Google+Sans+Flex:wght@500&display=swap"
     rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d7b66f'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='28' font-family='Arial' font-weight='700' fill='%23070808'%3EQ%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%235BB8F0'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='28' font-family='Arial' font-weight='700' fill='%23131515'%3EQ%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <picture class="hero-media" aria-hidden="true">
-        <img src="/assets/quoatz-home-hero.png" alt="" />
-      </picture>
+  <header class="navbar" data-navbar>
+    <div class="navbar-desktop">
+      <a class="nav-pill brand-pill" href="#hero" aria-label="QUOATZ home">
+        <svg class="brand-logo" viewBox="0 0 256 256" aria-hidden="true">
+          <path
+            d="M 228 0 C 172.772 0 128 44.772 128 100 L 128 0 L 0 0 L 0 28 C 0 83.228 44.772 128 100 128 L 0 128 L 0 256 L 28 256 C 83.228 256 128 211.228 128 156 L 128 256 L 256 256 L 256 228 C 256 172.772 211.228 128 156 128 L 256 128 L 256 0 Z" />
+        </svg>
+        <span>QUOATZ</span>
+      </a>
 
-      <header class="site-header">
-        <a class="brand" href="#" aria-label="QUOATZ home">
-          <span class="brand-mark" aria-hidden="true">Q</span>
-          <span>QUOATZ</span>
+      <nav class="nav-pill nav-menu" aria-label="Primary navigation">
+        <a href="#hero">How it works</a>
+        <a href="#hero">Features</a>
+        <a href="#results">Results</a>
+        <a href="#counter">Marketplace pulse</a>
+      </nav>
+
+      <div class="nav-pill store-pill" aria-label="Download links">
+        <a class="store-button" href="https://www.apple.com/in/app-store/" aria-label="Open Apple App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+              d="M16.53 12.24c-.03-2.69 2.2-3.98 2.3-4.04-1.25-1.83-3.19-2.08-3.88-2.11-1.65-.17-3.22.97-4.06.97-.84 0-2.14-.94-3.52-.92-1.81.03-3.48 1.05-4.41 2.67-1.88 3.27-.48 8.1 1.35 10.74.9 1.3 1.97 2.77 3.38 2.71 1.36-.05 1.87-.88 3.51-.88 1.64 0 2.1.88 3.53.85 1.46-.03 2.38-1.32 3.27-2.62 1.03-1.51 1.46-2.98 1.48-3.05-.03-.02-2.84-1.09-2.95-4.32ZM13.87 4.35c.74-.9 1.25-2.16 1.11-3.41-1.07.04-2.37.72-3.14 1.61-.69.8-1.29 2.08-1.13 3.3 1.2.09 2.42-.61 3.16-1.5Z" />
+          </svg>
         </a>
-        <div class="header-right">
-          <nav class="nav" aria-label="Primary navigation">
-            <a href="#marketplace">Marketplace</a>
-            <a href="#plans">Plans</a>
-            <a href="#trust">Trust</a>
-            <a href="#operations">Stack</a>
-          </nav>
-          <a class="header-cta" href="#plans">Join waitlist</a>
-        </div>
-      </header>
-
-      <div class="hero-layout">
-        <div class="hero-content">
-          <p class="eyebrow">Premium service marketplace</p>
-          <h1 id="hero-title">QUOATZ</h1>
-          <p class="hero-copy">
-            <span>Users post verified service requests.</span>
-            <span>Business Owners bid with ratings, portfolios, and recommendations.</span>
-            <span>Timers, reverse bidding, and secure payments stay visible.</span>
-          </p>
-          <div class="hero-proof" aria-label="QUOATZ marketplace highlights">
-            <span>Live request timers</span>
-            <span>Lowest qualified bids</span>
-            <span>Plan-based access</span>
-          </div>
-          <div class="hero-actions" aria-label="QUOATZ primary actions">
-            <a class="primary-action" href="#marketplace">See the flow</a>
-            <a class="secondary-action" href="#plans">Compare plans</a>
-          </div>
-        </div>
+        <a class="store-button" href="https://play.google.com/store/" aria-label="Open Google Play">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M3.4 2.16c-.25.27-.4.69-.4 1.24v17.2c0 .55.15.97.4 1.24l.08.07 9.65-9.65v-.52L3.48 2.09l-.08.07Z" />
+            <path fill="#34A853" d="m16.35 15.48-3.22-3.22v-.52l3.22-3.22.07.04 3.82 2.17c1.09.62 1.09 1.64 0 2.26l-3.82 2.17-.07.04Z" />
+            <path fill="#FBBC05" d="m16.42 15.44-3.29-3.29-9.73 9.73c.4.43 1.06.48 1.8.06l11.22-6.5Z" />
+            <path fill="#EA4335" d="M16.42 8.56 5.2 2.06c-.74-.42-1.4-.37-1.8.06l9.73 9.73 3.29-3.29Z" />
+          </svg>
+        </a>
       </div>
-    </section>
+    </div>
 
-    <section class="platform-accordion" id="marketplace" aria-labelledby="marketplace-title">
-      <div class="accordion-inner">
-        <div class="section-intro">
-          <p class="eyebrow">Marketplace engine</p>
-          <h2 id="marketplace-title">From posted request to paid work, every step is visible.</h2>
-        </div>
-
-        <div class="accordion-nav" role="tablist" aria-label="Marketplace capabilities">
-          <button class="accordion-tab active" type="button" role="tab" aria-selected="true"
-            data-accordion-tab="requesting">Requests</button>
-          <button class="accordion-tab" type="button" role="tab" aria-selected="false"
-            data-accordion-tab="timers">Timers</button>
-          <button class="accordion-tab" type="button" role="tab" aria-selected="false"
-            data-accordion-tab="profiles">Profiles</button>
-          <button class="accordion-tab" type="button" role="tab" aria-selected="false"
-            data-accordion-tab="payments">Payments</button>
-        </div>
-
-        <div class="accordion-stack" aria-live="polite">
-          <article class="accordion-card active" data-accordion-card="requesting">
-            <div class="accordion-copy">
-              <h3>Service request creation</h3>
-              <p>Users post title, budget, target date, photos, requirements, payment preference, and liability consent
-                in one clean flow.</p>
-            </div>
-            <div class="accordion-visual" aria-hidden="true">
-              <div class="workflow-board">
-                <span>01 Details</span>
-                <span>02 Media</span>
-                <span>03 Requirements</span>
-                <span>04 Auction mode</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="accordion-card" data-accordion-card="timers">
-            <div class="accordion-copy">
-              <h3>Timed bidding</h3>
-              <p>Every auction card and detail view shows the countdown, bid count, start window, close window, and
-                reverse-bidding state.</p>
-            </div>
-            <div class="accordion-visual" aria-hidden="true">
-              <div class="timer-board">
-                <strong>11:42:08</strong>
-                <span>Reverse bidding live</span>
-                <small>Lowest qualified bid can win</small>
-              </div>
-            </div>
-          </article>
-
-          <article class="accordion-card" data-accordion-card="profiles">
-            <div class="accordion-copy">
-              <h3>Business Owner proof</h3>
-              <p>Profiles surface portfolio media, ratings, social tags, recommendations, website access, and challenge
-                paths for negative ratings.</p>
-            </div>
-            <div class="accordion-visual" aria-hidden="true">
-              <div class="profile-board">
-                <div class="profile-avatar"></div>
-                <div>
-                  <strong>4.9 rating</strong>
-                  <span>Portfolio verified</span>
-                </div>
-                <div class="profile-bars">
-                  <span></span><span></span><span></span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="accordion-card" data-accordion-card="payments">
-            <div class="accordion-copy">
-              <h3>Payments and account rules</h3>
-              <p>Subscriptions, grace periods, receipts, declined-payment emails, verified login, unique social tags, and
-                new-IP alerts are part of the flow.</p>
-            </div>
-            <div class="accordion-visual" aria-hidden="true">
-              <div class="payment-board">
-                <span>Verified</span>
-                <span>Receipt sent</span>
-                <span>5-day reminder</span>
-                <span>Grace locked</span>
-              </div>
-            </div>
-          </article>
-        </div>
+    <div class="navbar-mobile">
+      <a class="mobile-brand" href="#hero" aria-label="QUOATZ home">
+        <svg class="brand-logo" viewBox="0 0 256 256" aria-hidden="true">
+          <path
+            d="M 228 0 C 172.772 0 128 44.772 128 100 L 128 0 L 0 0 L 0 28 C 0 83.228 44.772 128 100 128 L 0 128 L 0 256 L 28 256 C 83.228 256 128 211.228 128 156 L 128 256 L 256 256 L 256 228 C 256 172.772 211.228 128 156 128 L 256 128 L 256 0 Z" />
+        </svg>
+        <span>QUOATZ</span>
+      </a>
+      <div class="mobile-actions">
+        <a class="store-button mobile-store" href="https://www.apple.com/in/app-store/" aria-label="Open Apple App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+              d="M16.53 12.24c-.03-2.69 2.2-3.98 2.3-4.04-1.25-1.83-3.19-2.08-3.88-2.11-1.65-.17-3.22.97-4.06.97-.84 0-2.14-.94-3.52-.92-1.81.03-3.48 1.05-4.41 2.67-1.88 3.27-.48 8.1 1.35 10.74.9 1.3 1.97 2.77 3.38 2.71 1.36-.05 1.87-.88 3.51-.88 1.64 0 2.1.88 3.53.85 1.46-.03 2.38-1.32 3.27-2.62 1.03-1.51 1.46-2.98 1.48-3.05-.03-.02-2.84-1.09-2.95-4.32ZM13.87 4.35c.74-.9 1.25-2.16 1.11-3.41-1.07.04-2.37.72-3.14 1.61-.69.8-1.29 2.08-1.13 3.3 1.2.09 2.42-.61 3.16-1.5Z" />
+          </svg>
+        </a>
+        <a class="store-button mobile-store" href="https://play.google.com/store/" aria-label="Open Google Play">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M3.4 2.16c-.25.27-.4.69-.4 1.24v17.2c0 .55.15.97.4 1.24l.08.07 9.65-9.65v-.52L3.48 2.09l-.08.07Z" />
+            <path fill="#34A853" d="m16.35 15.48-3.22-3.22v-.52l3.22-3.22.07.04 3.82 2.17c1.09.62 1.09 1.64 0 2.26l-3.82 2.17-.07.04Z" />
+            <path fill="#FBBC05" d="m16.42 15.44-3.29-3.29-9.73 9.73c.4.43 1.06.48 1.8.06l11.22-6.5Z" />
+            <path fill="#EA4335" d="M16.42 8.56 5.2 2.06c-.74-.42-1.4-.37-1.8.06l9.73 9.73 3.29-3.29Z" />
+          </svg>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" data-menu-toggle>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </section>
+    </div>
 
-    <section class="pricing-section" id="plans" aria-labelledby="plans-title">
-      <div class="pricing-top">
-        <div class="pricing-copy">
-          <p class="eyebrow">Subscription levels</p>
-          <h2 id="plans-title">Four plans, one permission system.</h2>
-          <p>
-            QUOATZ uses plan entitlements to decide request volume, state access, bidder selection, message reach,
-            recommendation attachments, reports, and portfolio media access.
+    <div class="mobile-backdrop" data-menu-backdrop></div>
+    <nav class="mobile-panel" aria-label="Mobile navigation" data-mobile-panel>
+      <a href="#hero">How it works</a>
+      <a href="#hero">Features</a>
+      <a href="#results">Results</a>
+      <a href="#counter">Marketplace pulse</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <video
+        class="hero-video"
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260728_015819_1b3ec855-d586-4018-96c8-8bf90cada037.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+      <div class="hero-shade" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="copy-stack">
+          <div class="announcement reveal" style="--delay: 0.1s;">
+            <span>New</span>
+            <strong>A cleaner way to buy and sell local services</strong>
+          </div>
+          <h1 class="reveal" id="hero-title" style="--delay: 0.2s;">
+            <span class="desktop-title">Service requests<br>that<br>never stall</span>
+            <span class="mobile-title">Service<br>requests<br>that<br>never stall</span>
+          </h1>
+          <p class="hero-subtitle reveal" style="--delay: 0.3s;">
+            QUOATZ brings verified requests, reverse bidding, Business Owner proof, and secure payment states into one calm marketplace flow.
           </p>
         </div>
 
-        <div class="pricing-table" aria-label="QUOATZ subscription permission summary">
-          <div class="pricing-table-header">
-            <h3>Entitlement matrix</h3>
-            <div class="billing-toggle" aria-label="Permission engine">
-              <span>Role</span>
-              <strong>User</strong>
-            </div>
-          </div>
-          <div class="pricing-row">
-            <span>Standard</span>
-            <strong>5 requests, 24h post delay</strong>
-          </div>
-          <div class="pricing-row">
-            <span>Gold</span>
-            <strong>20 requests, instant visibility</strong>
-          </div>
-          <div class="pricing-row">
-            <span>Diamond</span>
-            <strong>50 requests, recommendations, reports</strong>
-          </div>
-          <div class="pricing-row">
-            <span>Platinum</span>
-            <strong>Unlimited requests, partners, reports</strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="pricing-plan-row">
-        <article class="pricing-plan starter">
-          <h3>Standard</h3>
-          <p>For general Users posting local service requests with core messaging and bidder selection.</p>
-          <a href="#operations">Map fields</a>
-        </article>
-        <article class="pricing-plan team">
-          <h3>Gold</h3>
-          <p>For self-proprietors who need faster marketplace access and broader messaging.</p>
-          <a href="#operations">Upgrade flow</a>
-        </article>
-        <article class="pricing-plan enterprise">
-          <h3>Diamond</h3>
-          <p>For small businesses adding bid recommendations, discounts, reports, and out-of-state posting.</p>
-          <a href="#operations">See reports</a>
-        </article>
-        <article class="pricing-plan platinum">
-          <h3>Platinum</h3>
-          <p>For larger businesses with unlimited requests, partner support, portfolio video, and reporting.</p>
-          <a href="#operations">Scale access</a>
-        </article>
-      </div>
-
-      <div class="pricing-bars" aria-hidden="true">
-        <div class="pricing-bar" style="--bar-height: 54%;"></div>
-        <div class="pricing-bar muted" style="--bar-height: 62%;"></div>
-        <div class="pricing-bar" style="--bar-height: 70%;"></div>
-        <div class="pricing-bar muted" style="--bar-height: 82%;"></div>
-      </div>
-    </section>
-
-    <section class="security-section" id="trust" aria-labelledby="trust-title">
-      <div class="security-heading">
-        <div>
-          <p class="eyebrow">Trust controls</p>
-          <h2 id="trust-title">Marketplace confidence has to be engineered into the interface.</h2>
-        </div>
-        <p>
-          Verification, account uniqueness, password rotation, new-IP alerts, bid rules, and payment notices all show
-          up as visible marketplace states instead of hidden back-office policy.
-        </p>
-      </div>
-
-      <div class="security-card-grid">
-        <article class="security-card api-card">
-          <div class="security-card-copy">
-            <h3>Verified accounts</h3>
-            <p>Email verification, unique social tags, new-IP alerts, permanent breach deletion, and password expiry are
-              designed as explicit states.</p>
-          </div>
-          <div class="security-api-visual" aria-hidden="true">
-            <div class="api-window">
-              <pre><code>account.status = verified
-email.unique = true
-social_tag.unique = true
-password.age = 31 days</code></pre>
-            </div>
-          </div>
-        </article>
-
-        <article class="security-card compliance-card">
-          <div class="security-card-copy">
-            <h3>Bid governance</h3>
-            <p>Reverse bidding, co-bids, bidder denial, bidder selection, attached recommendations, and timer state are
-              surfaced on every relevant screen.</p>
-          </div>
-          <div class="compliance-list" aria-hidden="true">
-            <div class="compliance-row">
-              <span></span>
-              <small>Timer</small>
-              <strong>Required on cards</strong>
-            </div>
-            <div class="compliance-row">
-              <span></span>
-              <small>Reverse</small>
-              <strong>Lowest qualified</strong>
-            </div>
-            <div class="compliance-row">
-              <span></span>
-              <small>Proof</small>
-              <strong>Portfolio + ratings</strong>
-            </div>
-          </div>
-        </article>
-
-        <article class="security-card economics-card">
-          <div class="security-card-copy">
-            <h3>Payment reliability</h3>
-            <p>Receipts, declined-payment emails, five-day renewal reminders, and ten-day grace-period locks keep the
-              marketplace from drifting into manual follow-up.</p>
-          </div>
-          <div class="asset-table" aria-hidden="true">
-            <div><span>Cards</span><strong>Enabled</strong></div>
-            <div><span>PayPal</span><strong>Enabled</strong></div>
-            <div><span>Bitcoin</span><strong>Gateway</strong></div>
-            <div><span>Grace</span><strong>No new posts</strong></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="console-showcase" aria-labelledby="console-title">
-      <div class="console-showcase-heading">
-        <h2 id="console-title">One dashboard language for Users, Business Owners, and admins.</h2>
-        <p>
-          The landing page previews the product surface: active auctions, countdowns, bidder qualification,
-          subscription status, payment state, and monthly report readiness.
-        </p>
-      </div>
-
-      <div class="console-figure-label">
-        <span>Preview</span>
-        QUOATZ marketplace workspace
-      </div>
-
-      <div class="dashboard-shell">
-        <div class="dashboard-topbar">
-          <span></span>
-          <span></span>
-          <span></span>
-          <strong>quoatz.app/dashboard</strong>
-        </div>
-        <div class="dashboard-body">
-          <aside class="dashboard-sidebar">
-            <strong>QUOATZ</strong>
-            <nav aria-label="Dashboard sections">
-              <span>Requests</span>
-              <span class="active">Bids</span>
-              <span>Messages</span>
-              <span>Payments</span>
-              <span>Profiles</span>
-              <span>Reports</span>
-            </nav>
-          </aside>
-
-          <div class="dashboard-main">
-            <div class="dashboard-title-row">
-              <h3>Live bid room</h3>
-              <button type="button">New request</button>
-            </div>
-
-            <div class="dashboard-table" role="table" aria-label="QUOATZ live service requests">
-              <div class="dashboard-row header" role="row">
-                <span>Request</span>
-                <span>Timer</span>
-                <span>Bid</span>
-                <span>Plan</span>
-                <span>State</span>
-              </div>
-              <div class="dashboard-row" role="row">
-                <span>Kitchen remodel</span>
-                <span>02:14:33</span>
-                <span>$7,610</span>
-                <span>Diamond</span>
-                <strong>Reverse</strong>
-              </div>
-              <div class="dashboard-row" role="row">
-                <span>Fleet repair</span>
-                <span>18:03:40</span>
-                <span>$1,280</span>
-                <span>Gold</span>
-                <strong>Review</strong>
-              </div>
-              <div class="dashboard-row" role="row">
-                <span>Childcare support</span>
-                <span>22:49:10</span>
-                <span>$420</span>
-                <span>Standard</span>
-                <strong>Local</strong>
-              </div>
-              <div class="dashboard-row" role="row">
-                <span>IT migration</span>
-                <span>04:32:18</span>
-                <span>$4,900</span>
-                <span>Platinum</span>
-                <strong>Partner</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dashboard-toast">
-          <strong>Bid selected</strong>
-          receipt and message thread ready
-        </div>
-      </div>
-    </section>
-
-    <section class="operations-cubes" id="operations" aria-labelledby="operations-title">
-      <div class="operations-inner">
-        <div class="operations-copy">
-          <p class="eyebrow">Build path</p>
-          <h2 id="operations-title">Scalable enough to grow, simple enough to ship.</h2>
-          <p>
-            The landing page points toward the planned production stack: Expo app, Next.js web, TypeScript API,
-            Postgres entitlements, R2 media, queue workers, payments, notifications, and audit logs.
-          </p>
-          <a class="operations-cta" href="#marketplace">Review the flow</a>
-        </div>
-
-        <div class="operations-visual">
-          <button class="modal-cube-shell" type="button" aria-label="Expand QUOATZ stack modules">
-            <span class="cube-particle" style="--tx: -210px; --ty: -132px; --tz: 80px; --s: 0.42; --r: -18deg; --d: 0ms;"></span>
-            <span class="cube-particle" style="--tx: -122px; --ty: -188px; --tz: 140px; --s: 0.34; --r: 12deg; --d: 28ms;"></span>
-            <span class="cube-particle" style="--tx: 156px; --ty: -170px; --tz: 120px; --s: 0.38; --r: -8deg; --d: 46ms;"></span>
-            <span class="cube-particle" style="--tx: 252px; --ty: -88px; --tz: 50px; --s: 0.52; --r: 18deg; --d: 72ms;"></span>
-            <span class="cube-particle" style="--tx: -262px; --ty: 4px; --tz: 100px; --s: 0.5; --r: 22deg; --d: 98ms;"></span>
-            <span class="cube-particle" style="--tx: -174px; --ty: 104px; --tz: 40px; --s: 0.36; --r: -32deg; --d: 118ms;"></span>
-            <span class="cube-particle" style="--tx: 188px; --ty: 86px; --tz: 150px; --s: 0.44; --r: 28deg; --d: 140ms;"></span>
-            <span class="cube-particle" style="--tx: 280px; --ty: 162px; --tz: 78px; --s: 0.58; --r: -16deg; --d: 168ms;"></span>
-            <span class="operations-core-cube">
-              <span class="cube-face cube-face-front"></span>
-              <span class="cube-face cube-face-back"></span>
-              <span class="cube-face cube-face-right"></span>
-              <span class="cube-face cube-face-left"></span>
-              <span class="cube-face cube-face-top"></span>
-              <span class="cube-face cube-face-bottom"></span>
-            </span>
+        <div class="hero-actions reveal" style="--delay: 0.4s;">
+          <a class="primary-action" href="#results">Begin your request today</a>
+          <button class="secondary-action" type="button" data-open-video>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5v14l11-7-11-7Z" />
+            </svg>
+            <span>See it live</span>
           </button>
         </div>
+
+        <div class="phone-mockup reveal" aria-label="QUOATZ mobile marketplace preview" style="--delay: 0.6s;">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-topline">
+            <div>
+              <strong>Good morning!</strong>
+              <span>Your service requests are moving.</span>
+            </div>
+            <div class="phone-icons" aria-hidden="true">
+              <button type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 7h18s-3 0-3-7" />
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                </svg>
+              </button>
+              <button class="phone-plus" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="stats-card">
+            <div class="stats-main">
+              <div class="stats-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2v8l5-5c4 4 4 10 0 14a7.07 7.07 0 0 1-10 0c-3.5-3.5-3-8.5 1-12" />
+                </svg>
+              </div>
+              <div>
+                <strong>18</strong>
+                <span>Active bids</span>
+              </div>
+              <div>
+                <strong>21</strong>
+                <span>Requests this week</span>
+              </div>
+            </div>
+            <div class="week-bars" aria-label="Weekly request activity">
+              <div><span style="height: 18px;"></span><small>M</small></div>
+              <div><span style="height: 28px;"></span><small>T</small></div>
+              <div><span style="height: 22px;"></span><small>W</small></div>
+              <div class="today"><span style="height: 34px;"></span><small>T</small></div>
+              <div><span style="height: 25px;"></span><small>F</small></div>
+              <div><span style="height: 16px;"></span><small>S</small></div>
+              <div><span style="height: 20px;"></span><small>S</small></div>
+            </div>
+          </div>
+
+          <div class="habit-heading">
+            <strong>Today's Requests</strong>
+            <span>3 of 4 matched</span>
+          </div>
+
+          <div class="request-list">
+            <article class="request-row completed" style="--row-delay: 0.8s;">
+              <div class="row-icon">01</div>
+              <div class="row-copy">
+                <strong>Kitchen remodel</strong>
+                <span>Reverse auction closes 04:12</span>
+              </div>
+              <div class="row-progress">
+                <small>85%</small>
+                <span><i style="width: 85%;"></i></span>
+              </div>
+              <em>12 bids</em>
+            </article>
+            <article class="request-row completed" style="--row-delay: 0.92s;">
+              <div class="row-icon">02</div>
+              <div class="row-copy">
+                <strong>Private chef</strong>
+                <span>Quotes due before 12:00 pm</span>
+              </div>
+              <div class="row-progress">
+                <small>100%</small>
+                <span><i style="width: 100%;"></i></span>
+              </div>
+              <em>9 bids</em>
+            </article>
+            <article class="request-row" style="--row-delay: 1.04s;">
+              <div class="row-icon">03</div>
+              <div class="row-copy">
+                <strong>Pool repair</strong>
+                <span>Portfolio required</span>
+              </div>
+              <div class="row-progress">
+                <small>67%</small>
+                <span><i style="width: 67%;"></i></span>
+              </div>
+              <em>6 bids</em>
+            </article>
+          </div>
+
+          <button class="create-routine" type="button">
+            <span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </span>
+            <strong>Create a request</strong>
+            <small>Start something new</small>
+          </button>
+
+          <div class="phone-bottom-nav" aria-hidden="true">
+            <span class="active">
+              <svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v10H3V11Z" /></svg>
+              Today
+            </span>
+            <span>Requests</span>
+            <span>Stats</span>
+            <span>Profile</span>
+          </div>
+        </div>
+      </div>
+
+      <svg class="hero-curve" viewBox="0 0 5688 1886" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <filter id="curve-blur">
+            <feGaussianBlur stdDeviation="125" />
+          </filter>
+        </defs>
+        <path
+          d="M2733.25 1264.78C706.858 1264.78 -50.5828 573.265 -177 202.5V2088.5H5865V202.5C5664.75 539.923 4759.65 1264.78 2733.25 1264.78Z"
+          fill="rgb(247,247,247)"
+          filter="url(#curve-blur)" />
+      </svg>
+    </section>
+
+    <section class="achievements" id="results" aria-labelledby="results-title">
+      <div class="section-header reveal-on-scroll">
+        <h2 id="results-title">What people are building with QUOATZ</h2>
+        <div class="social-proof">
+          <div class="avatar-strip" aria-label="QUOATZ member count">
+            <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260625_223420_17676c11-c7c0-46d4-89f2-dc3ac2a54835.png&w=1280&q=85" alt="QUOATZ member" />
+            <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260625_223437_0de72ad0-bb6a-4c9e-b398-2fa61fe9ca26.png&w=1280&q=85" alt="QUOATZ member" />
+            <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260625_223443_0b27ccfe-9b4c-4e2d-bd00-9ff50a2daed1.png&w=1280&q=85" alt="QUOATZ member" />
+            <span data-count-chip>51+</span>
+          </div>
+          <img class="stars" src="https://framerusercontent.com/images/FfmG8vzlH3tOeU2kFU0oUxANr9Y.svg" alt="Five star rating" />
+          <p>Loved by local buyers and Business Owners</p>
+        </div>
+      </div>
+
+      <div class="marquee-container reveal-on-scroll" aria-label="QUOATZ marketplace outcomes">
+        <div class="marquee-track" data-marquee-track>
+          <article class="result-card">
+            <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260625_213624_40d877b4-92a9-44d3-be3c-5d3332db4402.png&w=1280&q=85" alt="Maya on QUOATZ" />
+            <div class="card-gradient"></div>
+            <div class="card-top"><span>Maya</span><small>Homeowner</small></div>
+            <div class="card-bottom">
+              <p>Booked a vetted cleaner from verified bids in one afternoon.</p>
+            </div>
+          </article>
+          <article class="result-card">
+            <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260625_213908_9574cadd-4c04-4380-af84-a753e484415a.png&w=1280&q=85" alt="Daniel gray on QUOATZ" />
+            <div class="card-gradient"></div>
+            <div class="card-top"><span>Daniel gray</span><small>Founder</small></div>
+            <div class="card-bottom">
+              <strong>87%</strong>
+              <p>Cut quote-chasing by moving every job into timed bidding.</p>
+            </div>
+          </article>
+          <article class="result-card">
+            <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260625_213950_c1686b87-f412-4878-b7fe-96ba5085ba01.png&w=1280&q=85" alt="Aaron Lee on QUOATZ" />
+            <div class="card-gradient"></div>
+            <div class="card-top"><span>Aaron Lee</span><small>Remote Engineer</small></div>
+            <div class="card-bottom">
+              <p>No longer loses weekends coordinating repairs across messages.</p>
+            </div>
+          </article>
+          <article class="result-card">
+            <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260625_214012_f14ffda8-1f1c-48bc-893f-1ad05f6bc2d9.png&w=1280&q=85" alt="Priya on QUOATZ" />
+            <div class="card-gradient"></div>
+            <div class="card-top"><span>Priya</span><small>Busy Parent</small></div>
+            <div class="card-bottom">
+              <p>Compared portfolio proof before selecting her home project team.</p>
+            </div>
+          </article>
+          <article class="result-card">
+            <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260625_214103_cadf49e5-cae8-42e2-9bec-955b7347f850.png&w=1280&q=85" alt="Leo on QUOATZ" />
+            <div class="card-gradient"></div>
+            <div class="card-top"><span>Leo</span><small>Creative Professional</small></div>
+            <div class="card-bottom">
+              <strong>10 Days</strong>
+              <p>Filled a project pipeline with qualified local requests.</p>
+            </div>
+          </article>
+          <article class="result-card">
+            <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260625_214142_c7344da9-f597-42b7-8c31-7ca5228503fb.png&w=1280&q=85" alt="Ramya on QUOATZ" />
+            <div class="card-gradient"></div>
+            <div class="card-top"><span>Ramya</span><small>Software Developer</small></div>
+            <div class="card-bottom">
+              <p>Keeps household work moving with visible bids and receipts.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="counter" id="counter" aria-labelledby="counter-title">
+      <div class="counter-copy reveal-on-scroll">
+        <span class="counter-pill">Real requests, real progress</span>
+        <h2 id="counter-title">How QUOATZ keeps work moving every single day</h2>
+        <strong class="big-number">84,000+</strong>
+        <p>Bids reviewed across pilot marketplace flows</p>
+      </div>
+
+      <div class="counter-visual reveal-on-scroll">
+        <div class="video-frame">
+          <video
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260625_213350_6343fcfb-2892-4dcc-8573-1161447cacf5.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+          <div class="counter-fade" aria-hidden="true"></div>
+        </div>
+        <img
+          class="cloud-overlay"
+          src="https://res.cloudinary.com/dy5er7kv5/image/upload/v1782423467/clouds_vtypge.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="white-slab" aria-hidden="true"></div>
       </div>
     </section>
   </main>
+
+  <div class="video-overlay" data-video-overlay aria-hidden="true">
+    <button class="video-close" type="button" aria-label="Close video" data-close-video>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="video-dialog" role="dialog" aria-modal="true" aria-label="Habitline Demo">
+      <iframe
+        src="https://www.youtube.com/embed/b-jRHsYdomY?autoplay=0&mute=1"
+        title="Habitline Demo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+
   <script type="module" src="/script.js"></script>
 </body>
 

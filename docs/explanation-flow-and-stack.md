@@ -1,18 +1,18 @@
 # QUOATZ flow and stack explanation
 
-QUOATZ is a marketplace for service requests, Business Owner bids, reverse auctions, subscription permissions, account verification, media-rich profiles, payments, and reporting. The landing page is not a generic brochure. It previews the real product states the app needs to support.
+QUOATZ is a marketplace for service requests, Business Owner bids, reverse auctions, subscription permissions, account verification, media-rich profiles, payments, and reporting. The landing page now uses a Steadyflow-inspired marketing design to make that product story feel calmer, brighter, and easier to scan.
 
 ## The problem
 
-A marketplace like QUOATZ can lose trust when important rules are hidden. If countdowns only appear on detail pages, bidders miss deadlines. If reverse bidding is buried in settings, Users do not understand why the lowest qualified bid matters. If subscription permissions are not visible, account tiers feel arbitrary. If payment grace periods happen in the background, Users learn they are blocked only after trying to post.
+A service marketplace can lose trust when important rules are hidden. If countdowns only appear on detail pages, bidders miss deadlines. If reverse bidding is buried in settings, Users do not understand why the lowest qualified bid matters. If subscription permissions are not visible, account tiers feel arbitrary. If payment states happen in the background, Users learn they are blocked only after trying to post.
 
 The landing page addresses that by making the core operating model visible:
 
-- Users create service requests with budget, target date, media, requirements, payment preference, and liability consent.
-- Business Owners bid with portfolio proof, ratings, recommendations, and partner/co-bid context.
-- Timers appear as first-class marketplace objects.
-- Reverse bidding is represented as a live auction mode.
-- Payment and account rules are part of the product story.
+- Users create verified service requests.
+- Business Owners bid with proof, ratings, and portfolio context.
+- Timers and reverse-bidding states are visible in the product mockup.
+- Secure payment and matching states are part of the homepage copy.
+- Social proof and marketplace volume are expressed through results cards and the counter section.
 
 ## The approach
 
@@ -45,27 +45,25 @@ Expo mobile app        Next.js web app
 
 ## Flow represented on the page
 
-1. The hero shows the first user promise: QUOATZ is a premium service marketplace, not a storage product.
-2. The full-bleed product image shows desktop and mobile dashboard states for requests, bids, timers, payments, activity, and earnings.
-3. The Marketplace section explains service request creation, countdown timers, Business Owner proof, and payment/account rules.
-4. The Plans section maps Standard, Gold, Diamond, and Platinum permissions.
-5. The Trust section turns account, bid, and payment rules into visible user-facing states.
-6. The dashboard preview shows the product surface that later maps to User, Business Owner, and admin dashboards.
-7. The Stack section names the scalable app direction: Expo, Next.js, TypeScript API, Postgres, R2, queues, payments, and audit logs.
+1. The fixed pill navbar introduces QUOATZ as a polished app-style marketplace.
+2. The hero gives the promise: service requests should keep moving instead of stalling across calls, texts, and untracked bids.
+3. The phone mockup shows active bids, weekly request activity, reverse auction timing, matched requests, and request creation.
+4. The results marquee turns marketplace outcomes into repeated proof cards.
+5. The counter section gives the page a marketplace pulse and frames QUOATZ as an operating system for service work.
 
 ## Trade-offs
 
-The landing page uses plain HTML, CSS, and JavaScript instead of a component framework. That keeps cost and hosting complexity low, but it means repeated UI fragments are not componentized yet.
+The landing page uses plain HTML, CSS, and JavaScript instead of converting the repo to React, TypeScript, Tailwind, Framer Motion, and Lucide. That keeps the current Vite project fast and low-cost while still matching the supplied Steadyflow layout, motion, and asset direction.
 
-The home hero uses a static generated product scene instead of rebuilding the entire dashboard mockup in HTML. That gives the first screen a stronger premium visual signal, but the image should eventually be replaced with a real QUOATZ app screenshot once the production dashboard exists.
+The hero and counter use remote video assets from the design brief. They make the page feel much closer to the supplied design, but production should eventually replace those URLs with QUOATZ-owned media.
 
-The stack section describes the target production architecture, but the repo itself remains static. That separation is intentional. The landing page can launch before the full backend is connected.
+The page does not implement real marketplace data. The phone UI, cards, and metrics are marketing representations that should later connect to real User, Business Owner, plan, bid, and payment data from the production app.
 
 ## Alternatives considered
 
-The repo could have been converted to Next.js immediately. That would be useful if the landing page needed server-rendered marketplace listings or CMS-managed content today. For this request, the cheaper path is to keep Vite and ship the QUOATZ landing page quickly.
+The repo could be converted to React immediately. That would make sense if the landing page needed reusable product components, CMS content, or app-like state now. For this request, the cheaper and faster path is to keep Vite static and ship the visual redesign quickly.
 
-The repo could also use AWS S3 for static hosting and media later. The current architecture direction favors Cloudflare R2 for marketplace media because it is cost-effective for user uploads and CDN delivery. AWS remains a good later option if the whole backend moves into AWS services.
+The production marketplace should still use a scalable architecture: Expo for mobile, Next.js for web, a TypeScript API/BFF, Postgres for core relational data, Redis for sessions and rate limits, queues for email/jobs, R2 for cost-effective media storage, and payment integrations for cards, PayPal, and Bitcoin.
 
 ## Related
 
