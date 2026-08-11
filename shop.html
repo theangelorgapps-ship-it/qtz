@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Shop popular QUOATZ service request templates, build a request tray, and launch verified bidding with trusted Business Owners."
+  />
+  <meta name="theme-color" content="#070808" />
+  <title>QUOATZ - Shop service requests</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@700&family=Google+Sans+Flex:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23D8B35F'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='28' font-family='Arial' font-weight='700' fill='%23070808'%3EQ%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/shop.css" />
+</head>
+
+<body>
+  <video
+    class="shop-bg-video"
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260728_015819_1b3ec855-d586-4018-96c8-8bf90cada037.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    aria-hidden="true"
+  ></video>
+  <div class="shop-bg-shade" aria-hidden="true"></div>
+
+  <header class="shop-header">
+    <a class="shop-logo" href="/#hero" aria-label="QUOATZ home">
+      <svg viewBox="0 0 256 256" aria-hidden="true">
+        <path
+          d="M 228 0 C 172.772 0 128 44.772 128 100 L 128 0 L 0 0 L 0 28 C 0 83.228 44.772 128 100 128 L 0 128 L 0 256 L 28 256 C 83.228 256 128 211.228 128 156 L 128 256 L 256 256 L 256 228 C 256 172.772 211.228 128 156 128 L 256 128 L 256 0 Z" />
+      </svg>
+      <span>QUOATZ</span>
+    </a>
+
+    <nav class="shop-nav" aria-label="Shop navigation">
+      <a href="#templates">Templates</a>
+      <a href="#how">Flow</a>
+      <a href="/#results">Results</a>
+    </nav>
+
+    <button class="tray-button" type="button" data-open-tray aria-label="Open request tray">
+      <span>Tray</span>
+      <strong data-tray-count>0</strong>
+    </button>
+  </header>
+
+  <main>
+    <div class="shop-scroll-track">
+      <section class="shop-hero">
+        <div class="shop-title-copy">
+          <p class="shop-kicker">Request templates for real services</p>
+          <h1>Shop service flows</h1>
+          <p>
+            Start with a ready-made request, add proof requirements, then let verified Business Owners compete for the work.
+          </p>
+        </div>
+
+        <article class="featured-request">
+          <img
+            src="/assets/quoatz-home-hero.png"
+            alt="QUOATZ marketplace dashboard preview"
+          />
+          <div class="featured-request__copy">
+            <span>Featured</span>
+            <h2>Home project bid pack</h2>
+            <p>Timed bids, portfolio proof, milestone payments, and receipt tracking in one request.</p>
+            <button type="button" data-add-service="Home project bid pack">Add to tray</button>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <section class="shop-products" id="templates" aria-labelledby="templates-title">
+      <div class="shop-products__header">
+        <div>
+          <p>Popular starts</p>
+          <h2 id="templates-title">Service request templates</h2>
+        </div>
+        <a href="#how">How it works</a>
+      </div>
+
+      <div class="service-slider" aria-label="QUOATZ service request templates">
+        <article class="service-card reveal-service">
+          <div class="service-card__image">
+            <span>Same day</span>
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80" alt="Cleaner preparing a home service" />
+          </div>
+          <div class="service-card__body">
+            <a href="#" class="service-card__copy">
+              <strong>Home cleaning</strong>
+              <span>Compare verified cleaners with availability, scope, and receipt-ready payment states.</span>
+            </a>
+            <div class="service-card__bottom">
+              <small>Free to post</small>
+              <button type="button" data-add-service="Home cleaning">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card reveal-service">
+          <div class="service-card__image">
+            <span>Portfolio</span>
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="Kitchen interior prepared for remodeling" />
+          </div>
+          <div class="service-card__body">
+            <a href="#" class="service-card__copy">
+              <strong>Kitchen remodel</strong>
+              <span>Require work samples, license proof, site notes, and a timed bidding window.</span>
+            </a>
+            <div class="service-card__bottom">
+              <small>Bid window</small>
+              <button type="button" data-add-service="Kitchen remodel">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card reveal-service">
+          <div class="service-card__image">
+            <span>Proof</span>
+            <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=900&q=80" alt="Outdoor pool service environment" />
+          </div>
+          <div class="service-card__body">
+            <a href="#" class="service-card__copy">
+              <strong>Pool repair</strong>
+              <span>Collect diagnostics, service history, warranty notes, and qualified repair quotes.</span>
+            </a>
+            <div class="service-card__bottom">
+              <small>Proof checked</small>
+              <button type="button" data-add-service="Pool repair">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card reveal-service">
+          <div class="service-card__image">
+            <span>Hosted</span>
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=80" alt="Chef preparing a private dining service" />
+          </div>
+          <div class="service-card__body">
+            <a href="#" class="service-card__copy">
+              <strong>Private chef</strong>
+              <span>Share guest count, menu direction, dietary needs, service time, and bid deadline.</span>
+            </a>
+            <div class="service-card__bottom">
+              <small>Availability first</small>
+              <button type="button" data-add-service="Private chef">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card reveal-service">
+          <div class="service-card__image">
+            <span>Mobile</span>
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Vehicle ready for detailing service" />
+          </div>
+          <div class="service-card__body">
+            <a href="#" class="service-card__copy">
+              <strong>Auto detailing</strong>
+              <span>Set vehicle type, location, preferred products, and proof requirements for mobile crews.</span>
+            </a>
+            <div class="service-card__bottom">
+              <small>Local crews</small>
+              <button type="button" data-add-service="Auto detailing">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card reveal-service">
+          <div class="service-card__image">
+            <span>Event</span>
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=80" alt="Event space prepared for service staff" />
+          </div>
+          <div class="service-card__body">
+            <a href="#" class="service-card__copy">
+              <strong>Event staffing</strong>
+              <span>Request teams with roles, schedule, uniform notes, and verified business profiles.</span>
+            </a>
+            <div class="service-card__bottom">
+              <small>Team bids</small>
+              <button type="button" data-add-service="Event staffing">Add</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shop-flow" id="how" aria-labelledby="flow-title">
+      <div class="shop-flow__copy">
+        <p>From cart to request</p>
+        <h2 id="flow-title">Build the brief before the bids begin</h2>
+      </div>
+
+      <div class="flow-grid">
+        <article>
+          <strong>Choose</strong>
+          <span>Select one or more service templates from the shop-style tray.</span>
+        </article>
+        <article>
+          <strong>Refine</strong>
+          <span>Add location, timing, budget notes, proof requirements, and payment preferences.</span>
+        </article>
+        <article>
+          <strong>Compare</strong>
+          <span>Review Business Owner profiles, bid windows, receipts, and activity history.</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <aside class="tray-panel" data-tray-panel aria-hidden="true">
+    <div class="tray-panel__header">
+      <div>
+        <span>Request tray</span>
+        <strong data-tray-heading>No services added</strong>
+      </div>
+      <button type="button" data-close-tray aria-label="Close request tray">Close</button>
+    </div>
+    <ul data-tray-list></ul>
+    <a class="tray-panel__cta" href="/#hero">Start request</a>
+  </aside>
+  <div class="tray-backdrop" data-tray-backdrop></div>
+
+  <script type="module" src="/shop.js"></script>
+</body>
+
+</html>

@@ -4,6 +4,9 @@ Static Vite landing page for QUOATZ, a premium service marketplace for Users, Bu
 timed bidding, reverse auctions, subscription permissions, secure payments, and verified account
 flows.
 
+The site now includes a template-inspired shop page at `/shop.html` for browsing service request
+templates and building a request tray.
+
 ## Documentation
 
 - [How to run and review the landing page](docs/how-to-run-landing-page.md)
