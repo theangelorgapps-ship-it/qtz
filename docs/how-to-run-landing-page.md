@@ -28,7 +28,7 @@ This guide gets the static QUOATZ landing page running locally, verifies the bui
 
 3. Open the page and review the primary flow.
 
-   Check the fixed pill navigation, cinematic video hero, QUOATZ phone mockup, results marquee, and marketplace counter section.
+   Check the fixed pill navigation, black cinematic video hero, metallic-gold buttons, QUOATZ phone mockup, results marquee, and marketplace counter section.
 
 4. Build the production bundle.
 
@@ -59,8 +59,10 @@ Manual checks:
 - The page title reads `QUOATZ - Service requests that never stall`.
 - No visible legacy cloud-storage or dark dashboard-page copy remains.
 - The hero headline reads `Service requests that never stall`.
-- The primary hero video plays behind the centered copy and phone mockup.
+- The primary hero video is darkened behind the centered copy and phone mockup.
+- Buttons and active controls use the metallic-gold theme.
 - The phone mockup mentions requests, active bids, reverse auction timing, and matching.
+- The counter and phone UI do not present fabricated marketplace performance numbers.
 - The mobile menu opens, closes, and locks body scroll.
 - The video modal opens from `See it live` and closes on the X, backdrop, or Escape.
 - The results marquee repeats continuously and pauses on hover.

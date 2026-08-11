@@ -90,7 +90,7 @@ if (marqueeTrack) {
 }
 
 if (countChip) {
-  const counts = ["51+", "52+", "53+", "54+"];
+  const counts = ["QTZ", "BID", "PAY", "ID"];
   let countIndex = 0;
 
   window.setInterval(() => {

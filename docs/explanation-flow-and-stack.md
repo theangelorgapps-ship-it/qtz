@@ -1,6 +1,6 @@
 # QUOATZ flow and stack explanation
 
-QUOATZ is a marketplace for service requests, Business Owner bids, reverse auctions, subscription permissions, account verification, media-rich profiles, payments, and reporting. The landing page now uses a Steadyflow-inspired marketing design to make that product story feel calmer, brighter, and easier to scan.
+QUOATZ is a marketplace for service requests, Business Owner bids, reverse auctions, subscription permissions, account verification, media-rich profiles, payments, and reporting. The landing page now uses a Steadyflow-inspired marketing design with an off-black canvas and metallic-gold controls so the product story feels premium, focused, and easier to scan.
 
 ## The problem
 
@@ -12,7 +12,7 @@ The landing page addresses that by making the core operating model visible:
 - Business Owners bid with proof, ratings, and portfolio context.
 - Timers and reverse-bidding states are visible in the product mockup.
 - Secure payment and matching states are part of the homepage copy.
-- Social proof and marketplace volume are expressed through results cards and the counter section.
+- Social proof and marketplace readiness are expressed through results cards and the counter section without fabricated performance numbers.
 
 ## The approach
 
@@ -49,7 +49,7 @@ Expo mobile app        Next.js web app
 2. The hero gives the promise: service requests should keep moving instead of stalling across calls, texts, and untracked bids.
 3. The phone mockup shows active bids, weekly request activity, reverse auction timing, matched requests, and request creation.
 4. The results marquee turns marketplace outcomes into repeated proof cards.
-5. The counter section gives the page a marketplace pulse and frames QUOATZ as an operating system for service work.
+5. The counter section gives the page a marketplace pulse and reserves room for real platform data once QUOATZ has production metrics.
 
 ## Trade-offs
 
@@ -57,7 +57,7 @@ The landing page uses plain HTML, CSS, and JavaScript instead of converting the 
 
 The hero and counter use remote video assets from the design brief. They make the page feel much closer to the supplied design, but production should eventually replace those URLs with QUOATZ-owned media.
 
-The page does not implement real marketplace data. The phone UI, cards, and metrics are marketing representations that should later connect to real User, Business Owner, plan, bid, and payment data from the production app.
+The page does not implement real marketplace data. The phone UI and cards are marketing representations that should later connect to real User, Business Owner, plan, bid, and payment data from the production app. Until then, visible labels avoid claiming fake platform volume or performance.
 
 ## Alternatives considered
 
