@@ -1,0 +1,75 @@
+/* Upwork design tokens — ported from evidence/tokens.css */
+:root {
+  --black: #000;
+  --white: #fff;
+
+  /* Brand greens */
+  --brand-green: #108a00;
+  --brand-green-hc: #0b6100;
+  --up-green: #14a800;
+  --up-green-hc: #0c5c00;
+  --up-green-dark: #3c8224;
+  --up-lime: #95df00;
+  --green-50: #e8f6e6;
+  --green-100: #c9e9c4;
+  --green-200: #a3d99c;
+  --green-300: #75c76a;
+  --green-400: #4eab41;
+  --green-500: #14a800;
+  --green-600: #108a00;
+  --green-700: #0f7500;
+  --green-800: #0c6600;
+  --green-900: #0b5c00;
+  --green-950: #094d00;
+  --green-lightest: #effcef;
+
+  /* Grays (green-tinted marketing palette) */
+  --gray-01: #5e6d55;
+  --gray-02: #9aaa97;
+  --gray-03: #beccbe;
+  --gray-04: #d5e0d5;
+  --gray-05: #e4ebe4;
+  --gray-06: #f2f7f2;
+  --gray-07: #f7faf7;
+
+  /* Dark surfaces */
+  --up-black: #181818;
+  --up-black-dark: #0e0e0e;
+  --gray-950: #1a1a1a;
+  --gray-900: #1f1f1f;
+  --gray-700: #333;
+  --gray-600: #4d4d4d;
+  --gray-500: #686e73;
+
+  /* Typography */
+  --font-family-base: "Neue Montreal", "PP Neue Montreal", Arial, Helvetica, sans-serif;
+  --font-size-base: 16px;
+  --font-size-h1: 30px;
+  --font-size-h1-lg: 42px;
+  --font-size-h1-rebrand: 80px;
+  --font-size-h2: 26px;
+  --font-size-h2-lg: 40px;
+  --font-size-h2-rebrand: 72px;
+  --font-size-h3: 24px;
+  --font-size-h4: 22px;
+  --font-size-h5: 20px;
+  --font-size-h6: 18px;
+  --heading-letter-spacing-h1-rebrand: -0.035em;
+  --heading-letter-spacing-h2-rebrand: -0.03em;
+
+  /* Radii */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-4xl: 32px;
+  --radius-pill: 10rem;
+
+  /* Upsell gradients (Business Plus promo) */
+  --upsell-bg-color: linear-gradient(0deg, hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 100%, 0.5)),
+    linear-gradient(90deg, #dff69b, #95e79b 50%, #a9f9b2);
+  --upsell-border-color: linear-gradient(158deg, #dff69b, #95e79b 50%, #80de8e);
+  --upsell-tag-bg-color: linear-gradient(158deg, #bdef9b, #afec9b);
+}

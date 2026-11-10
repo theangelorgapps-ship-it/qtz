@@ -1,0 +1,715 @@
+// Mock data layer for the Upwork clone.
+// Grounded in evidence captured from upwork.com on 2026-11-10 (see ../evidence/).
+
+export type JobType = 'hourly' | 'fixed'
+export type ExperienceLevel = 'Entry Level' | 'Intermediate' | 'Expert'
+
+export interface Job {
+  id: string
+  title: string
+  posted: string
+  postedDaysAgo: number
+  type: JobType
+  hourlyMin?: number
+  hourlyMax?: number
+  fixedBudget?: number
+  level: ExperienceLevel
+  duration: string
+  hoursPerWeek: string
+  remote: boolean
+  projectType: string
+  category: string
+  description: string
+  skills: string[]
+  proposals: string
+  lastViewed: string
+  interviewing: number
+  locationRestriction?: string
+  contractToHire: boolean
+  client: {
+    country: string
+    city?: string
+    hires: number
+    jobsPosted: number
+    rating: number
+    reviewCount: number
+    paymentVerified: boolean
+    memberSince: string
+    totalSpent: string
+  }
+}
+
+export interface Freelancer {
+  id: string
+  username: string
+  name: string
+  verified: boolean
+  title: string
+  badge: 'Top Rated Plus' | 'Top Rated' | 'Rising Talent' | 'Expert-Vetted' | null
+  jobSuccess: number | null
+  rating: number
+  reviewCount: number
+  hourlyRate: number
+  earned: string
+  country: string
+  city: string
+  localTime: string
+  totalJobs: number
+  totalHours: string
+  availableNow: boolean
+  offersConsultations: boolean
+  consultationPrice?: string
+  contractToHire: boolean
+  agency?: string
+  englishLevel: string
+  skills: string[]
+  relatedJobs: number
+  bio: string
+  feedback: { title: string; date: string; rating: number; quote: string; client?: string }[]
+  workHistory: { title: string; rating: number | null; earnings: string; date: string }[]
+}
+
+export interface MessageRoom {
+  id: string
+  title: string
+  counterpart: string
+  date: string
+  preview: string
+  unread: boolean
+  messages: { from: 'me' | 'them' | 'system'; text: string; time: string }[]
+}
+
+export const JOBS: Job[] = [
+  {
+    id: '022116124995209590313',
+    title: 'Full Stack Developer',
+    posted: 'Posted 2 weeks ago',
+    postedDaysAgo: 14,
+    type: 'hourly',
+    hourlyMin: 25,
+    hourlyMax: 45,
+    level: 'Expert',
+    duration: 'Less than 1 month',
+    hoursPerWeek: 'Less than 30 hrs/week',
+    remote: true,
+    projectType: 'One-time project',
+    category: 'Development & IT',
+    description:
+      'I am looking for someone who can support our busy development team. They would need to have Python skills, be comfortable with HTML and setting up API integrations.',
+    skills: ['Python', 'Full-Stack Development', 'Web Development', 'JavaScript', 'API Integration', 'HTML'],
+    proposals: '20 to 50',
+    lastViewed: '5 days ago',
+    interviewing: 0,
+    locationRestriction: 'Only freelancers located in the U.K. may apply.',
+    contractToHire: false,
+    client: { country: 'United Kingdom', city: 'London', hires: 12, jobsPosted: 18, rating: 4.8, reviewCount: 9, paymentVerified: true, memberSince: '2021', totalSpent: '$10K+' },
+  },
+  {
+    id: '022116124995209590314',
+    title: 'Senior Full Stack Developer',
+    posted: 'Posted 3 weeks ago',
+    postedDaysAgo: 21,
+    type: 'hourly',
+    hourlyMin: 40,
+    hourlyMax: 65,
+    level: 'Expert',
+    duration: '3 to 6 months',
+    hoursPerWeek: 'More than 30 hrs/week',
+    remote: true,
+    projectType: 'Ongoing project',
+    category: 'Development & IT',
+    description:
+      'We’re looking for a senior full stack developer to help us get through a backlog of client-facing and internal projects. Our work spans a wide range of languages and platforms, so we need a confident all-rounder who can move between stacks without a long ramp-up for each one. At least 20 hours per week for the next 4 weeks, starting as soon as possible. Mostly remote, with occasional days at our Hackney Wick office. London-based candidates are strongly preferred.',
+    skills: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'AWS', 'Docker'],
+    proposals: '10 to 15',
+    lastViewed: '1 day ago',
+    interviewing: 2,
+    locationRestriction: 'Only freelancers located in the U.K. may apply.',
+    contractToHire: true,
+    client: { country: 'United Kingdom', city: 'London', hires: 34, jobsPosted: 41, rating: 4.9, reviewCount: 27, paymentVerified: true, memberSince: '2018', totalSpent: '$100K+' },
+  },
+  {
+    id: '022116124995209590315',
+    title: 'AI Chatbot Developer for Customer Support Automation',
+    posted: 'Posted 2 days ago',
+    postedDaysAgo: 2,
+    type: 'fixed',
+    fixedBudget: 2500,
+    level: 'Intermediate',
+    duration: '1 to 3 months',
+    hoursPerWeek: 'Less than 30 hrs/week',
+    remote: true,
+    projectType: 'One-time project',
+    category: 'AI Services',
+    description:
+      'We need an AI specialist to build a customer-support chatbot trained on our help-center content. The bot should hand off to a human agent when confidence is low and log every conversation to our CRM.',
+    skills: ['Chatbot Development', 'OpenAI API', 'Python', 'Prompt Engineering', 'Zapier'],
+    proposals: '5 to 10',
+    lastViewed: '2 hours ago',
+    interviewing: 1,
+    contractToHire: false,
+    client: { country: 'United States', city: 'Austin', hires: 5, jobsPosted: 7, rating: 5.0, reviewCount: 4, paymentVerified: true, memberSince: '2023', totalSpent: '$8K+' },
+  },
+  {
+    id: '022116124995209590316',
+    title: 'Brand Identity & Logo Design for Fintech Startup',
+    posted: 'Posted 5 days ago',
+    postedDaysAgo: 5,
+    type: 'fixed',
+    fixedBudget: 1200,
+    level: 'Intermediate',
+    duration: 'Less than 1 month',
+    hoursPerWeek: 'Less than 30 hrs/week',
+    remote: true,
+    projectType: 'One-time project',
+    category: 'Design & Creative',
+    description:
+      'Early-stage fintech looking for a complete brand identity: logo, color system, typography, and a lightweight brand book we can hand to our product and marketing teams.',
+    skills: ['Logo Design', 'Brand Identity', 'Adobe Illustrator', 'Figma', 'Typography'],
+    proposals: '50+',
+    lastViewed: '3 days ago',
+    interviewing: 4,
+    contractToHire: false,
+    client: { country: 'Germany', city: 'Berlin', hires: 8, jobsPosted: 10, rating: 4.7, reviewCount: 6, paymentVerified: true, memberSince: '2020', totalSpent: '$15K+' },
+  },
+  {
+    id: '022116124995209590317',
+    title: 'React Native Developer to Reskin Codecanyon App',
+    posted: 'Posted 1 week ago',
+    postedDaysAgo: 7,
+    type: 'fixed',
+    fixedBudget: 800,
+    level: 'Intermediate',
+    duration: 'Less than 1 month',
+    hoursPerWeek: 'Less than 30 hrs/week',
+    remote: true,
+    projectType: 'One-time project',
+    category: 'Development & IT',
+    description:
+      'You will reskin, redesign and rebrand a Codecanyon application in React Native and Flutter. New theme, app icon, splash screen, and store listings included.',
+    skills: ['React Native', 'Flutter', 'Mobile App Development', 'Firebase'],
+    proposals: '15 to 20',
+    lastViewed: '1 day ago',
+    interviewing: 3,
+    contractToHire: false,
+    client: { country: 'United Kingdom', hires: 22, jobsPosted: 30, rating: 4.6, reviewCount: 18, paymentVerified: true, memberSince: '2019', totalSpent: '$40K+' },
+  },
+  {
+    id: '022116124995209590318',
+    title: 'SEO Content Writer for SaaS Blog (Ongoing)',
+    posted: 'Posted 3 days ago',
+    postedDaysAgo: 3,
+    type: 'hourly',
+    hourlyMin: 30,
+    hourlyMax: 50,
+    level: 'Intermediate',
+    duration: 'More than 6 months',
+    hoursPerWeek: 'Less than 30 hrs/week',
+    remote: true,
+    projectType: 'Ongoing project',
+    category: 'Writing & Translation',
+    description:
+      'B2B SaaS company needs a writer for 4 long-form SEO articles per month. You should understand search intent, write for humans first, and be comfortable with Surfer/Clearscope-style briefs.',
+    skills: ['SEO Writing', 'Content Writing', 'Copywriting', 'SaaS'],
+    proposals: '20 to 50',
+    lastViewed: '6 hours ago',
+    interviewing: 2,
+    contractToHire: false,
+    client: { country: 'United States', city: 'New York', hires: 15, jobsPosted: 19, rating: 4.9, reviewCount: 12, paymentVerified: true, memberSince: '2017', totalSpent: '$60K+' },
+  },
+  {
+    id: '022116124995209590319',
+    title: 'Data Visualization Dashboard in React + D3',
+    posted: 'Posted 1 day ago',
+    postedDaysAgo: 1,
+    type: 'fixed',
+    fixedBudget: 4000,
+    level: 'Expert',
+    duration: '1 to 3 months',
+    hoursPerWeek: 'More than 30 hrs/week',
+    remote: true,
+    projectType: 'One-time project',
+    category: 'Development & IT',
+    description:
+      'Build an analytics dashboard rendering large time-series datasets. React front end, D3/custom SVG charts, WebSocket live updates. Design system provided in Figma.',
+    skills: ['React', 'D3.js', 'Data Visualization', 'TypeScript', 'WebSockets'],
+    proposals: 'Less than 5',
+    lastViewed: '30 minutes ago',
+    interviewing: 0,
+    contractToHire: true,
+    client: { country: 'Netherlands', city: 'Amsterdam', hires: 3, jobsPosted: 4, rating: 5.0, reviewCount: 2, paymentVerified: true, memberSince: '2024', totalSpent: '$5K+' },
+  },
+  {
+    id: '022116124995209590320',
+    title: 'Instagram Account Recovery Specialist',
+    posted: 'Posted 4 days ago',
+    postedDaysAgo: 4,
+    type: 'fixed',
+    fixedBudget: 300,
+    level: 'Entry Level',
+    duration: 'Less than 1 month',
+    hoursPerWeek: 'Less than 30 hrs/week',
+    remote: true,
+    projectType: 'One-time project',
+    category: 'Admin & Customer Support',
+    description:
+      'You will get your hacked, lost, locked, and stolen Instagram recovered. Experience with Meta support channels and appeal processes required.',
+    skills: ['Social Media Management', 'Customer Support', 'Account Recovery'],
+    proposals: '50+',
+    lastViewed: '2 days ago',
+    interviewing: 1,
+    contractToHire: false,
+    client: { country: 'United Kingdom', hires: 9, jobsPosted: 12, rating: 4.5, reviewCount: 7, paymentVerified: false, memberSince: '2022', totalSpent: '$3K+' },
+  },
+  {
+    id: '022116124995209590321',
+    title: 'Fractional CFO / Financial Model for Series A',
+    posted: 'Posted 1 week ago',
+    postedDaysAgo: 8,
+    type: 'hourly',
+    hourlyMin: 80,
+    hourlyMax: 150,
+    level: 'Expert',
+    duration: '3 to 6 months',
+    hoursPerWeek: 'Less than 30 hrs/week',
+    remote: true,
+    projectType: 'Ongoing project',
+    category: 'Finance & Accounting',
+    description:
+      'SaaS startup preparing a Series A needs a three-statement operating model, hiring plan, and investor-ready metrics pack (ARR, NRR, CAC payback).',
+    skills: ['Financial Modeling', 'Financial Analysis', 'SaaS Metrics', 'Excel'],
+    proposals: '5 to 10',
+    lastViewed: '4 days ago',
+    interviewing: 2,
+    contractToHire: false,
+    client: { country: 'United States', city: 'San Francisco', hires: 6, jobsPosted: 8, rating: 4.8, reviewCount: 5, paymentVerified: true, memberSince: '2021', totalSpent: '$25K+' },
+  },
+  {
+    id: '022116124995209590322',
+    title: 'Contract Review — SaaS Master Services Agreement',
+    posted: 'Posted 2 days ago',
+    postedDaysAgo: 2,
+    type: 'fixed',
+    fixedBudget: 500,
+    level: 'Expert',
+    duration: 'Less than 1 month',
+    hoursPerWeek: 'Less than 30 hrs/week',
+    remote: true,
+    projectType: 'One-time project',
+    category: 'Legal',
+    description:
+      'Review and redline a 20-page MSA for a US-based SaaS vendor. Focus on liability caps, IP assignment, and data-processing terms. UK/EU counsel welcome.',
+    skills: ['Contract Law', 'Legal Review', 'SaaS Agreements'],
+    proposals: '10 to 15',
+    lastViewed: '1 day ago',
+    interviewing: 0,
+    contractToHire: false,
+    client: { country: 'United Kingdom', hires: 2, jobsPosted: 3, rating: 5.0, reviewCount: 1, paymentVerified: true, memberSince: '2025', totalSpent: '$1K+' },
+  },
+  {
+    id: '022116124995209590323',
+    title: 'Laravel + Flutter Bidding Feature for Marketplace',
+    posted: 'Posted 6 days ago',
+    postedDaysAgo: 6,
+    type: 'fixed',
+    fixedBudget: 6000,
+    level: 'Expert',
+    duration: '3 to 6 months',
+    hoursPerWeek: 'More than 30 hrs/week',
+    remote: true,
+    projectType: 'One-time project',
+    category: 'Development & IT',
+    description:
+      'Implement a bidding feature on our platform where freelancers can bid their services and users can place bids on these offerings. Backend in Laravel, mobile app in Flutter. Kindly share your best quote along with the estimated timeline.',
+    skills: ['Laravel', 'Flutter', 'PHP', 'MySQL', 'REST API'],
+    proposals: '20 to 50',
+    lastViewed: '2 days ago',
+    interviewing: 5,
+    contractToHire: false,
+    client: { country: 'United Kingdom', hires: 18, jobsPosted: 24, rating: 4.7, reviewCount: 14, paymentVerified: true, memberSince: '2020', totalSpent: '$50K+' },
+  },
+  {
+    id: '022116124995209590324',
+    title: 'HR Onboarding Workflow Setup in Notion',
+    posted: 'Posted 3 days ago',
+    postedDaysAgo: 3,
+    type: 'fixed',
+    fixedBudget: 450,
+    level: 'Entry Level',
+    duration: 'Less than 1 month',
+    hoursPerWeek: 'Less than 30 hrs/week',
+    remote: true,
+    projectType: 'One-time project',
+    category: 'HR & Training',
+    description:
+      'Set up an employee onboarding pipeline in Notion: templates, checklist automation, and a 30-60-90 day plan structure for a 25-person remote team.',
+    skills: ['Notion', 'HR Consulting', 'Process Design'],
+    proposals: '15 to 20',
+    lastViewed: '12 hours ago',
+    interviewing: 1,
+    contractToHire: false,
+    client: { country: 'Canada', city: 'Toronto', hires: 4, jobsPosted: 5, rating: 4.9, reviewCount: 3, paymentVerified: true, memberSince: '2023', totalSpent: '$6K+' },
+  },
+]
+
+export const FREELANCERS: Freelancer[] = [
+  {
+    id: '~017036bdae73929f68',
+    username: 'antonchuvirau',
+    name: 'Anton C.',
+    verified: true,
+    title: 'React Developer Front End Developer SaaS Full Stack Developer Node.js',
+    badge: 'Top Rated Plus',
+    jobSuccess: 100,
+    rating: 4.9,
+    reviewCount: 61,
+    hourlyRate: 35,
+    earned: '$400K+ earned',
+    country: 'Spain',
+    city: 'Barcelona',
+    localTime: '4:10 pm local time',
+    totalJobs: 79,
+    totalHours: '5.2K',
+    availableNow: true,
+    offersConsultations: true,
+    consultationPrice: '$30 per 30 min video meeting',
+    contractToHire: true,
+    agency: 'UI UX design AI agency with Full Stack development expertise',
+    englishLevel: 'Fluent',
+    skills: ['React', 'Node.js', 'CSS', 'Front-End Development', 'JavaScript', 'Redux', 'React Native', 'TypeScript', 'Next.js', 'SaaS'],
+    relatedJobs: 5,
+    bio: '👋 Hi! My name is Anton. I\'m a React Developer, AI Developer specializing in SaaS, AI-powered web applications, and B2B platforms. I have 6+ years of experience delivering 300+ projects for SaaS, AI, and B2B clients.\n\n⭐ Top Rated Plus React Developer\n📅 6+ years as a React Developer\n📦 300+ projects delivered\n⏱️ 5,000+ Upwork hours\n🔁 ~70% returning clients',
+    feedback: [
+      { title: 'Marketing Site Design + Logo for Interpretis (B2B SaaS)', date: 'June 27, 2026', rating: 5.0, quote: 'Working with this team was an amazing experience from start to finish. They have handled all things UI/UX like our SaaS marketing site and logo design with a level of professionalism…' },
+      { title: 'Next.js & React Full stack developer for a website development.', date: 'May 12, 2026', rating: 5.0, quote: 'I can only recommend working with UX minds. Highly professional and commited.', client: 'Dirk W.' },
+    ],
+    workHistory: [
+      { title: 'Front End Developer | React Full Stack Developer | AI React Developer | SaaS', rating: 5.0, earnings: 'Private earnings', date: 'Sep 2025' },
+      { title: 'SaaS Dashboard Rebuild in React + TypeScript', rating: 5.0, earnings: '$12,400', date: 'Jun 2025' },
+      { title: 'AI-powered B2B onboarding flow', rating: 4.8, earnings: '$8,900', date: 'Mar 2025' },
+    ],
+  },
+  {
+    id: '~0129595d3e254554db',
+    username: 'arpitkheni',
+    name: 'Arpit K.',
+    verified: true,
+    title: 'Full Stack Developer | Custom Web Applications | Laravel & React',
+    badge: 'Top Rated',
+    jobSuccess: 98,
+    rating: 4.9,
+    reviewCount: 42,
+    hourlyRate: 30,
+    earned: '$200K+ earned',
+    country: 'India',
+    city: 'Ahmedabad',
+    localTime: '8:40 pm local time',
+    totalJobs: 64,
+    totalHours: '4.1K',
+    availableNow: true,
+    offersConsultations: false,
+    contractToHire: true,
+    englishLevel: 'Fluent',
+    skills: ['Full-Stack Development', 'Laravel', 'React', 'PHP', 'MySQL', 'API Integration'],
+    relatedJobs: 8,
+    bio: 'Full Stack Developer for custom web applications. I build ebook portals, marketplaces, and business platforms end-to-end: Laravel backends, React frontends, payment integrations, and deployment on your live server.',
+    feedback: [
+      { title: 'Full Stack Developer for Customizing EbookPortal', date: 'June 27, 2025', rating: 5.0, quote: 'Arpit delivered the milestone exactly as specified. Great communication throughout.', client: 'Charles F.' },
+    ],
+    workHistory: [
+      { title: 'Custom Full Stack Web Application with Frontend & Backend Development', rating: 5.0, earnings: '$6,200', date: 'Jun 2025' },
+      { title: 'EbookPortal customization and milestone delivery', rating: 5.0, earnings: '$3,800', date: 'May 2025' },
+    ],
+  },
+  {
+    id: '~017896ccfb72314cd6',
+    username: 'moetazj',
+    name: 'Moetaz J.',
+    verified: true,
+    title: 'Expert Bug Fixing for Flutter, React Native, Android & iOS Apps',
+    badge: 'Top Rated',
+    jobSuccess: 97,
+    rating: 4.8,
+    reviewCount: 35,
+    hourlyRate: 40,
+    earned: '$100K+ earned',
+    country: 'Tunisia',
+    city: 'Tunis',
+    localTime: '5:10 pm local time',
+    totalJobs: 51,
+    totalHours: '3.3K',
+    availableNow: false,
+    offersConsultations: true,
+    consultationPrice: '$25 per 30 min video meeting',
+    contractToHire: false,
+    englishLevel: 'Fluent',
+    skills: ['Flutter', 'React Native', 'Android', 'iOS', 'Dart', 'Mobile App Development'],
+    relatedJobs: 3,
+    bio: 'Mobile engineer specialising in bug fixing and performance rescue for Flutter and React Native apps. Crash-free rate improvements, store compliance, and CI pipelines.',
+    feedback: [
+      { title: 'Expert Bug Fixing for Flutter App', date: 'June 4, 2025', rating: 5.0, quote: 'Fixed a crash that two other freelancers could not. Fast and thorough.', client: 'Charles F.' },
+    ],
+    workHistory: [
+      { title: 'Expert Bug Fixing for Flutter, React Native, Android & iOS Apps', rating: 5.0, earnings: '$2,100', date: 'Jun 2025' },
+    ],
+  },
+  {
+    id: '~0188aabbccddee0011',
+    username: 'salmanazeem',
+    name: 'Salman A.',
+    verified: true,
+    title: 'Social Media Recovery & Security Specialist',
+    badge: 'Rising Talent',
+    jobSuccess: 92,
+    rating: 4.6,
+    reviewCount: 18,
+    hourlyRate: 25,
+    earned: '$20K+ earned',
+    country: 'Pakistan',
+    city: 'Lahore',
+    localTime: '9:10 pm local time',
+    totalJobs: 29,
+    totalHours: '900',
+    availableNow: true,
+    offersConsultations: false,
+    contractToHire: false,
+    englishLevel: 'Conversational',
+    skills: ['Social Media Management', 'Account Recovery', 'Customer Support'],
+    relatedJobs: 1,
+    bio: 'I help clients recover hacked, disabled, and suspended social media accounts, and secure them against future attacks.',
+    feedback: [
+      { title: 'You will get your instagram account recovery', date: 'June 24, 2025', rating: 4.6, quote: 'Got the account back. Process took longer than expected but successful.', client: 'Charles F.' },
+    ],
+    workHistory: [
+      { title: 'Instagram account recovery', rating: 4.6, earnings: '$450', date: 'Jun 2025' },
+    ],
+  },
+  {
+    id: '~0188aabbccddee0012',
+    username: 'elenakdesign',
+    name: 'Elena K.',
+    verified: true,
+    title: 'Brand Identity Designer | Logo, Guidelines, Figma Design Systems',
+    badge: 'Top Rated Plus',
+    jobSuccess: 100,
+    rating: 5.0,
+    reviewCount: 88,
+    hourlyRate: 65,
+    earned: '$300K+ earned',
+    country: 'Portugal',
+    city: 'Lisbon',
+    localTime: '3:10 pm local time',
+    totalJobs: 112,
+    totalHours: '6.8K',
+    availableNow: true,
+    offersConsultations: true,
+    consultationPrice: '$50 per 30 min video meeting',
+    contractToHire: false,
+    englishLevel: 'Fluent',
+    skills: ['Brand Identity', 'Logo Design', 'Figma', 'Design Systems', 'Illustration'],
+    relatedJobs: 2,
+    bio: 'Brand designer for startups that want to look like they mean it. Identity systems, logo suites, and Figma design libraries your engineers will actually use.',
+    feedback: [
+      { title: 'Complete rebrand for fintech MVP', date: 'October 2, 2026', rating: 5.0, quote: 'Elena took a vague brief and returned a brand book our whole team loves.', client: 'Margaux D.' },
+    ],
+    workHistory: [
+      { title: 'Brand identity & design system', rating: 5.0, earnings: '$14,000', date: 'Oct 2026' },
+      { title: 'Logo suite and guidelines', rating: 5.0, earnings: '$5,600', date: 'Jul 2026' },
+    ],
+  },
+  {
+    id: '~0188aabbccddee0013',
+    username: 'davidomills',
+    name: 'David O.',
+    verified: true,
+    title: 'SEO Content Writer | B2B SaaS | Long-form & Thought Leadership',
+    badge: 'Top Rated',
+    jobSuccess: 99,
+    rating: 4.9,
+    reviewCount: 54,
+    hourlyRate: 55,
+    earned: '$150K+ earned',
+    country: 'United States',
+    city: 'Chicago',
+    localTime: '10:10 am local time',
+    totalJobs: 87,
+    totalHours: '2.9K',
+    availableNow: true,
+    offersConsultations: false,
+    contractToHire: true,
+    englishLevel: 'Native/Bilingual',
+    skills: ['SEO Writing', 'Content Strategy', 'Copywriting', 'Editing'],
+    relatedJobs: 6,
+    bio: 'B2B SaaS writer. I turn technical products into articles that rank and convert. HubSpot, Surfer, and Clearscope workflows supported.',
+    feedback: [
+      { title: 'Ongoing SEO blog program', date: 'September 18, 2026', rating: 5.0, quote: 'Organic traffic is up 3x since David took over the blog.', client: 'Priya S.' },
+    ],
+    workHistory: [
+      { title: 'SEO content program (16 articles)', rating: 5.0, earnings: '$9,200', date: 'Sep 2026' },
+    ],
+  },
+  {
+    id: '~0188aabbccddee0014',
+    username: 'clairedubois',
+    name: 'Claire D.',
+    verified: true,
+    title: 'Fractional CFO | SaaS Metrics, Fundraising Models, Board Packs',
+    badge: 'Expert-Vetted',
+    jobSuccess: 100,
+    rating: 5.0,
+    reviewCount: 21,
+    hourlyRate: 120,
+    earned: '$500K+ earned',
+    country: 'France',
+    city: 'Paris',
+    localTime: '4:10 pm local time',
+    totalJobs: 26,
+    totalHours: '1.8K',
+    availableNow: false,
+    offersConsultations: true,
+    consultationPrice: '$80 per 30 min video meeting',
+    contractToHire: false,
+    agency: undefined,
+    englishLevel: 'Fluent',
+    skills: ['Financial Modeling', 'Fundraising', 'SaaS Metrics', 'FP&A'],
+    relatedJobs: 1,
+    bio: 'Former VC-backed CFO. I build the models investors actually read: three-statement operating models, cohort analyses, and ARR bridge walkthroughs.',
+    feedback: [
+      { title: 'Series A financial model', date: 'August 30, 2026', rating: 5.0, quote: 'Our lead investor called the model “the cleanest they had seen this year.”', client: 'James T.' },
+    ],
+    workHistory: [
+      { title: 'Series A model + metrics pack', rating: 5.0, earnings: '$18,500', date: 'Aug 2026' },
+    ],
+  },
+  {
+    id: '~0188aabbccddee0015',
+    username: 'tomasmuller',
+    name: 'Tomas M.',
+    verified: true,
+    title: 'Data Visualization Engineer | React, D3, Real-time Dashboards',
+    badge: 'Top Rated',
+    jobSuccess: 96,
+    rating: 4.8,
+    reviewCount: 33,
+    hourlyRate: 70,
+    earned: '$220K+ earned',
+    country: 'Czechia',
+    city: 'Prague',
+    localTime: '4:10 pm local time',
+    totalJobs: 44,
+    totalHours: '3.9K',
+    availableNow: true,
+    offersConsultations: false,
+    contractToHire: true,
+    englishLevel: 'Fluent',
+    skills: ['D3.js', 'React', 'Data Visualization', 'TypeScript', 'WebGL'],
+    relatedJobs: 4,
+    bio: 'I build dashboards that stay fast at a million points. React + D3 + WebGL, with a bias for custom SVG over chart libraries when the design calls for it.',
+    feedback: [
+      { title: 'Real-time trading dashboard', date: 'October 11, 2026', rating: 4.9, quote: 'Charts render 60fps with live data. Exceeded the spec.', client: 'Hana B.' },
+    ],
+    workHistory: [
+      { title: 'Analytics dashboard (React + D3)', rating: 4.9, earnings: '$11,700', date: 'Oct 2026' },
+    ],
+  },
+]
+
+export const MESSAGE_ROOMS: MessageRoom[] = [
+  {
+    id: 'room_6046d1d809ded071ca712b9a639c4290',
+    title: 'Charles F./Anmol S. — You will get a beautiful app for your business',
+    counterpart: 'Anmol S.',
+    date: '7/29/26',
+    preview: 'Anmol: Is your project still active?',
+    unread: true,
+    messages: [
+      { from: 'them', text: 'Hi Charles, I reviewed your brief and I can deliver the first milestone by Friday.', time: 'Jul 28, 2026 10:12' },
+      { from: 'me', text: 'Great — can you also include the admin panel in milestone one?', time: 'Jul 28, 2026 11:03' },
+      { from: 'them', text: 'Yes, I will include a basic admin panel with user management.', time: 'Jul 28, 2026 11:20' },
+      { from: 'them', text: 'Is your project still active?', time: 'Jul 29, 2026 09:41' },
+    ],
+  },
+  {
+    id: 'room_6168a90dbb27a36056858acdb31a13d2',
+    title: 'Arpit Kheni — Full Stack Developer for Customizin EbookPortal',
+    counterpart: 'Arpit Kheni',
+    date: '6/27/25',
+    preview: 'Charles Finny approved the milestone',
+    unread: false,
+    messages: [
+      { from: 'them', text: 'Milestone 2 is ready for review on the staging server.', time: 'Jun 26, 2025 15:44' },
+      { from: 'system', text: 'Charles Finny approved the milestone', time: 'Jun 27, 2025 09:02' },
+    ],
+  },
+  {
+    id: 'room_bd9b8bac4ee050e33e3832f039df3b0c',
+    title: 'Salman Azeem — You will get your instagram account recovery',
+    counterpart: 'Salman Azeem',
+    date: '6/24/25',
+    preview: 'This message was removed because it contained contact information…',
+    unread: false,
+    messages: [
+      { from: 'them', text: 'I have submitted the appeal to Meta support. Usually it takes 3–5 days.', time: 'Jun 23, 2025 13:10' },
+      { from: 'system', text: 'This message was removed because it contained contact information. Sharing contact information outside the contract workroom is against our Terms of Service.', time: 'Jun 24, 2025 08:31' },
+    ],
+  },
+  {
+    id: 'room_92bd7707ebee8f47acc69044686c5c28',
+    title: 'Charles F./Moetaz J. — Expert Bug Fixing for Flutter, React Native, Android & iOS Apps',
+    counterpart: 'Moetaz J.',
+    date: '6/4/25',
+    preview: 'Moetaz: Hi',
+    unread: false,
+    messages: [
+      { from: 'them', text: 'Hi', time: 'Jun 4, 2025 10:05' },
+      { from: 'me', text: 'Hi Moetaz, the crash logs are attached in the workroom files.', time: 'Jun 4, 2025 10:08' },
+    ],
+  },
+  {
+    id: 'room_b07f76cffc54e7cf302001cf79b7f82c',
+    title: 'Charles F./Aamir S. — Taskup: Laravel Freelance Marketplace Installation',
+    counterpart: 'Aamir S.',
+    date: '4/23/25',
+    preview: 'Charles Finny wants to schedule a 30-minute meeting',
+    unread: false,
+    messages: [
+      { from: 'me', text: 'Hi Aamir, I hope this message finds you well. I\'m looking to implement a bidding feature on our platform, where freelancers can bid their services, and users can also place bids on these offerings. Laravel backend and Flutter mobile app. Kindly share your best quote and timeline.', time: 'Apr 20, 2025 14:22' },
+      { from: 'system', text: 'Charles Finny wants to schedule a 30-minute meeting', time: 'Apr 23, 2025 09:15' },
+    ],
+  },
+  {
+    id: 'room_8a969af84733e2c18ac4b802bed1ad39',
+    title: 'Salman Abbasi — Disabled Instagram Recovery',
+    counterpart: 'Salman Abbasi',
+    date: '12/24/24',
+    preview: 'You: Thank you Sir. Have Blessed Day',
+    unread: false,
+    messages: [
+      { from: 'them', text: 'Your account has been restored. Please enable two-factor authentication now.', time: 'Dec 24, 2024 16:47' },
+      { from: 'me', text: 'Thank you Sir. Have Blessed Day', time: 'Dec 24, 2024 17:02' },
+    ],
+  },
+]
+
+export const JOB_CATEGORIES = [
+  'Development & IT',
+  'AI Services',
+  'Design & Creative',
+  'Sales & Marketing',
+  'Admin & Customer Support',
+  'Writing & Translation',
+  'Finance & Accounting',
+  'Legal',
+  'HR & Training',
+  'Engineering & Architecture',
+]
+
+export function findJob(id: string) {
+  return JOBS.find((j) => j.id === id)
+}
+export function findFreelancer(id: string) {
+  return FREELANCERS.find((f) => f.id === id || f.username === id)
+}
+export function findRoom(id: string) {
+  return MESSAGE_ROOMS.find((r) => r.id === id)
+}
